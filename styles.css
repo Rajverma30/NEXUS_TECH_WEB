@@ -44,6 +44,15 @@ body {
   line-height: 1.6;
 }
 
+/* Help browsers isolate heavy sections a bit (reduces paint/scroll jank on mobile) */
+.hero,
+.section,
+.marquee-section,
+.footer {
+  content-visibility: auto;
+  contain-intrinsic-size: 900px;
+}
+
 /* ─── SCROLLBAR ─── */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--bg-void); }
@@ -859,6 +868,65 @@ body::before {
   .cta-section { padding: 70px 0; }
   .ai-feature:hover { transform: none; }
   .metric-value { font-size: 18px; }
+}
+
+/* ═══════════════════════════════════════════════
+   PERFORMANCE — TOUCH DEVICES / LOW POWER
+   ═══════════════════════════════════════════════ */
+@media (pointer: coarse) {
+  /* Backdrop-filter + heavy blurs are expensive on many mobile GPUs */
+  .navbar.scrolled,
+  .mobile-menu,
+  .hero-card,
+  .service-card,
+  .ai-feature,
+  .portfolio-card,
+  .why-card,
+  .testimonial-card,
+  .contact-form,
+  .float-badge {
+    backdrop-filter: none !important;
+  }
+
+  /* Reduce big blur layers */
+  .hero-orb { filter: blur(40px); }
+  .cta-orb { filter: blur(24px); }
+
+  /* Keep marquee but slow it a bit to reduce continuous work */
+  .marquee-track { animation-duration: 45s; }
+
+  /* Noise overlay can cause extra painting on scroll */
+  body::before { opacity: 0.18; }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Remove continuous animations explicitly */
+  .marquee-track { animation: none !important; transform: translateX(0) !important; }
+  .hero-orb-1,
+  .hero-orb-2,
+  .hero-orb-3,
+  .ai-brain-bg,
+  .ai-center-node,
+  .orbit-ring-1,
+  .orbit-ring-2,
+  .orbit-ring-3,
+  .orbit-node-1,
+  .orbit-node-2,
+  .orbit-node-3,
+  .wa-float,
+  .wa-float-pulse { animation: none !important; }
 }
 
 /* ═══════════════════════════════════════════════

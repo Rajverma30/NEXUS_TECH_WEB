@@ -28,7 +28,7 @@
   <div class="container">
     <div class="nav-inner">
       <a href="#" class="logo">
-        <img src="fulllogo_png.jpeg" alt="Nexus Tech" class="logo-img">
+        <img src="logo.png" alt="Nexus Tech" class="logo-img">
       </a>
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
@@ -725,7 +725,7 @@
     <div class="footer-grid">
       <div>
         <a href="#" class="footer-logo">
-          <img src="fulllogo_png.jpeg" alt="Nexus Tech" class="footer-logo-img">
+          <img src="logo.png" alt="Nexus Tech" class="footer-logo-img">
         </a>
         <p class="footer-brand-desc">AI-powered web development, digital marketing, and automation solutions that drive real business growth.</p>
         <div class="footer-socials">
@@ -782,26 +782,45 @@
 </footer>
 
 <script>
-/* ── Custom Cursor ── */
+/* ── Perf helpers ── */
+const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
+const isFinePointer = window.matchMedia?.('(pointer: fine)')?.matches;
+
+/* ── Custom Cursor (desktop/fine pointer only) ── */
 const cursor = document.getElementById('cursor');
 const follower = document.getElementById('cursorFollower');
-if (cursor && follower) {
+if (isFinePointer && !prefersReducedMotion && cursor && follower) {
   let mx = 0, my = 0, fx = 0, fy = 0;
-  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  let rafId = null;
+  const onMove = (e) => { mx = e.clientX; my = e.clientY; };
+  document.addEventListener('mousemove', onMove, { passive: true });
   const animateCursor = () => {
-    if (cursor) { cursor.style.left = mx + 'px'; cursor.style.top = my + 'px'; }
-    fx += (mx - fx) * 0.12; fy += (my - fy) * 0.12;
-    if (follower) { follower.style.left = fx + 'px'; follower.style.top = fy + 'px'; }
-    requestAnimationFrame(animateCursor);
+    cursor.style.left = mx + 'px';
+    cursor.style.top = my + 'px';
+    fx += (mx - fx) * 0.12;
+    fy += (my - fy) * 0.12;
+    follower.style.left = fx + 'px';
+    follower.style.top = fy + 'px';
+    rafId = requestAnimationFrame(animateCursor);
   };
-  animateCursor();
+  rafId = requestAnimationFrame(animateCursor);
+  window.addEventListener('blur', () => { if (rafId) cancelAnimationFrame(rafId); rafId = null; }, { passive: true });
+  window.addEventListener('focus', () => { if (!rafId) rafId = requestAnimationFrame(animateCursor); }, { passive: true });
 }
 
-/* ── Navbar ── */
+/* ── Navbar (passive + rAF throttle) ── */
 const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
+let navTicking = false;
+const updateNavbar = () => {
+  navTicking = false;
+  if (!navbar) return;
   navbar.classList.toggle('scrolled', window.scrollY > 50);
-});
+};
+window.addEventListener('scroll', () => {
+  if (navTicking) return;
+  navTicking = true;
+  requestAnimationFrame(updateNavbar);
+}, { passive: true });
 
 /* ── Mobile Menu ── */
 const hamburger = document.getElementById('hamburger');
@@ -819,16 +838,20 @@ document.querySelectorAll('.mobile-link, .mobile-menu .nav-cta').forEach(link =>
   });
 });
 
-/* ── Scroll Reveal ── */
-const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
-  });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-revealEls.forEach(el => observer.observe(el));
+/* ── Scroll Reveal (disable on reduced motion) ── */
+if (!prefersReducedMotion) {
+  const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => observer.observe(el));
+} else {
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => el.classList.add('visible'));
+}
 
-/* ── Terminal Typewriter ── */
+/* ── Terminal Typewriter (slow a bit on reduced motion) ── */
 const commands = [
   { cmd: 'deploy --ai-chatbot', out: '✓ Bot deployed successfully' },
   { cmd: 'run seo-audit', out: '✓ 47 issues fixed, rank: ↑12' },
@@ -845,11 +868,11 @@ function typeLoop() {
     if (charIdx <= curr.cmd.length) {
       if (cmdEl) cmdEl.textContent = curr.cmd.slice(0, charIdx);
       charIdx++;
-      setTimeout(typeLoop, 60);
+      setTimeout(typeLoop, prefersReducedMotion ? 90 : 60);
     } else {
       phase = 'showing';
       if (outEl) outEl.textContent = curr.out;
-      setTimeout(typeLoop, 1800);
+      setTimeout(typeLoop, prefersReducedMotion ? 2400 : 1800);
     }
   } else if (phase === 'showing') {
     phase = 'erasing';
@@ -860,7 +883,7 @@ function typeLoop() {
     if (charIdx > 0) {
       if (cmdEl) cmdEl.textContent = curr.cmd.slice(0, charIdx - 1);
       charIdx--;
-      setTimeout(typeLoop, 30);
+      setTimeout(typeLoop, prefersReducedMotion ? 45 : 30);
     } else {
       cmdIdx = (cmdIdx + 1) % commands.length;
       phase = 'typing';
@@ -930,15 +953,16 @@ function handleSubmit() {
   document.getElementById('formSuccess').style.display = 'block';
 }
 
-/* ── Smooth Scroll ── */
+/* ── Smooth Scroll (respect reduced motion) ── */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
-    const target = document.querySelector(this.getAttribute('href'));
+    const href = this.getAttribute('href');
+    const target = href ? document.querySelector(href) : null;
     if (target) {
       e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
     }
-  });
+  }, { passive: false });
 });
 </script>
 </body>
