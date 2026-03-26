@@ -512,7 +512,7 @@ body::before {
   border-radius: 50%; border: 1px solid rgba(99,102,241,0.15);
 }
 .orbit-ring-1 { width: 200px; height: 200px; margin: -100px 0 0 -100px; animation: spin-slow 15s linear infinite; }
-.orbit-ring-2 { width: 300px; height: 300px; margin: -150px 0 0 -150px; animation: spin-slow 25s linear infinite reverse; }
+.orbit-ring-2 { width: 300px; height: 300px; margin: -27px 0 0 -27px; animation: spin-slow 25s linear infinite reverse; }
 .orbit-ring-3 { width: 380px; height: 380px; margin: -190px 0 0 -190px; animation: spin-slow 35s linear infinite; }
 .orbit-node {
   position: absolute; top: 50%; left: 50%;
