@@ -600,12 +600,14 @@ body::before {
 .portfolio-overlay {
   position: absolute; inset: 0; background: rgba(0,0,0,0.6); opacity: 0;
   display: flex; align-items: center; justify-content: center; gap: 12px; transition: opacity 0.3s;
+  z-index: 3;
 }
 .portfolio-card:hover .portfolio-overlay { opacity: 1; }
 .portfolio-action {
   background: var(--accent-violet); color: #fff; border: none;
   border-radius: 100px; padding: 8px 18px; font-size: 13px; font-weight: 600;
   cursor: pointer; font-family: var(--font-body); transition: background 0.2s;
+  text-decoration: none; display: inline-flex; align-items: center; justify-content: center;
 }
 .portfolio-action:hover { background: var(--accent-glow); }
 .portfolio-info { padding: 22px; }
@@ -868,6 +870,9 @@ body::before {
   .cta-section { padding: 70px 0; }
   .ai-feature:hover { transform: none; }
   .metric-value { font-size: 18px; }
+  /* Mobile has no hover; keep CTA visible for project cards */
+  .portfolio-overlay { opacity: 1; background: rgba(0,0,0,0.45); }
+  .portfolio-thumb-icon { transform: translateY(-18px); }
 }
 
 /* ═══════════════════════════════════════════════
