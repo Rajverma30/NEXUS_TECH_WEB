@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════
-   NEXUS TECH — Main Stylesheet
+   VRAIZENTECH - Main Stylesheet
    Extracted & enhanced from index.html
    Mobile-first, fully responsive
    ═══════════════════════════════════════════════ */
@@ -157,13 +157,13 @@ body::before {
   flex-shrink: 0;
 }
 .logo-img {
-  height: 44px;
+  height: 48px;
   width: auto;
   display: block;
   object-fit: contain;
 }
-.logo-text-wrap {
-  display: none; /* Logo image contains brand name */
+.logo-text {
+  display: none;
 }
 
 .nav-links {
@@ -764,7 +764,7 @@ body::before {
   margin-bottom: 16px;
 }
 .footer-logo-img {
-  height: 40px; width: auto; object-fit: contain;
+  height: 44px; width: auto; object-fit: contain;
 }
 .footer-brand-desc { color: var(--text-muted); font-size: 14px; line-height: 1.7; margin-bottom: 24px; max-width: 280px; }
 .footer-socials { display: flex; gap: 12px; flex-wrap: wrap; }
