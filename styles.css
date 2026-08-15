@@ -539,6 +539,12 @@ ul { list-style: none; }
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--text);
+  margin-bottom: 10px;
+}
+.platforms-sub {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-secondary);
   margin-bottom: 36px;
 }
 .logo-marquee {
@@ -548,42 +554,126 @@ ul { list-style: none; }
 }
 .logo-marquee-track {
   display: flex;
-  gap: 48px;
+  gap: 20px;
   width: max-content;
-  animation: marquee 40s linear infinite;
+  animation: marquee 45s linear infinite;
+  padding: 6px 0;
+}
+.logo-marquee:hover .logo-marquee-track {
+  animation-play-state: paused;
 }
 .platform-logo {
-  display: flex;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-width: max-content;
+  padding: 12px 18px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: #64748B;
+  box-shadow: var(--shadow-sm);
+  cursor: default;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+.platform-icon {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 140px;
-  padding: 10px 8px;
-  color: #64748B;
-  opacity: 0.72;
-  transition: color 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
-  cursor: default;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--bg-alt);
+  flex-shrink: 0;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
-.platform-logo span {
-  font-size: 15px;
-  font-weight: 700;
+.platform-icon svg {
+  display: block;
+}
+.platform-text {
+  font-size: 14px;
+  font-weight: 600;
   letter-spacing: -0.01em;
   white-space: nowrap;
+  color: inherit;
 }
+.platform-text strong {
+  font-weight: 700;
+}
+
+/* Default: muted single-color icons */
+.platform-logo .g-blue,
+.platform-logo .g-green,
+.platform-logo .g-yellow,
+.platform-logo .g-red,
+.platform-logo .ga-yellow,
+.platform-logo .ga-orange,
+.platform-logo .ga-blue,
+.platform-logo .yt-bg,
+.platform-logo .ig-fill {
+  fill: currentColor;
+}
+.platform-logo .yt-play {
+  fill: #fff;
+  opacity: 0.85;
+}
+
 .platform-logo:hover {
-  opacity: 1;
-  transform: scale(1.06);
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: var(--shadow-md);
+  border-color: transparent;
+  color: var(--text);
 }
-.platform-logo[data-brand="google"]:hover { color: #4285F4; }
-.platform-logo[data-brand="meta"]:hover { color: #0668E1; }
-.platform-logo[data-brand="instagram"]:hover { color: #E4405F; }
-.platform-logo[data-brand="facebook"]:hover { color: #1877F2; }
-.platform-logo[data-brand="whatsapp"]:hover { color: #25D366; }
-.platform-logo[data-brand="linkedin"]:hover { color: #0A66C2; }
-.platform-logo[data-brand="youtube"]:hover { color: #FF0000; }
-.platform-logo[data-brand="analytics"]:hover { color: #F9AB00; }
-.platform-logo[data-brand="gbp"]:hover { color: #4285F4; }
-.platform-logo[data-brand="shopify"]:hover { color: #96BF48; }
-.platform-logo[data-brand="wordpress"]:hover { color: #21759B; }
+.platform-logo:hover .platform-icon {
+  transform: scale(1.08);
+}
+
+/* Brand hover colors */
+.platform-logo[data-brand="google"]:hover { border-color: rgba(66, 133, 244, 0.35); }
+.platform-logo[data-brand="google"]:hover .g-blue { fill: #4285F4; }
+.platform-logo[data-brand="google"]:hover .g-green { fill: #34A853; }
+.platform-logo[data-brand="google"]:hover .g-yellow { fill: #FBBC05; }
+.platform-logo[data-brand="google"]:hover .g-red { fill: #EA4335; }
+.platform-logo[data-brand="google"]:hover .platform-icon { background: rgba(66, 133, 244, 0.1); }
+.platform-logo[data-brand="google"]:hover .platform-text { color: #4285F4; }
+
+.platform-logo[data-brand="meta"]:hover { color: #0668E1; border-color: rgba(6, 104, 225, 0.3); }
+.platform-logo[data-brand="meta"]:hover .platform-icon { background: rgba(6, 104, 225, 0.1); color: #0668E1; }
+
+.platform-logo[data-brand="instagram"]:hover { color: #E4405F; border-color: rgba(228, 64, 95, 0.3); }
+.platform-logo[data-brand="instagram"]:hover .ig-fill { fill: url(#igGradA); }
+.platform-logo[data-brand="instagram"][aria-hidden="true"]:hover .ig-fill { fill: url(#igGradB); }
+.platform-logo[data-brand="instagram"]:hover .platform-icon { background: rgba(228, 64, 95, 0.1); }
+
+.platform-logo[data-brand="facebook"]:hover { color: #1877F2; border-color: rgba(24, 119, 242, 0.3); }
+.platform-logo[data-brand="facebook"]:hover .platform-icon { background: rgba(24, 119, 242, 0.1); color: #1877F2; }
+
+.platform-logo[data-brand="youtube"]:hover { color: #FF0000; border-color: rgba(255, 0, 0, 0.28); }
+.platform-logo[data-brand="youtube"]:hover .yt-bg { fill: #FF0000; }
+.platform-logo[data-brand="youtube"]:hover .yt-play { fill: #fff; opacity: 1; }
+.platform-logo[data-brand="youtube"]:hover .platform-icon { background: rgba(255, 0, 0, 0.08); }
+
+.platform-logo[data-brand="whatsapp"]:hover { color: #25D366; border-color: rgba(37, 211, 102, 0.3); }
+.platform-logo[data-brand="whatsapp"]:hover .platform-icon { background: rgba(37, 211, 102, 0.12); color: #25D366; }
+
+.platform-logo[data-brand="linkedin"]:hover { color: #0A66C2; border-color: rgba(10, 102, 194, 0.3); }
+.platform-logo[data-brand="linkedin"]:hover .platform-icon { background: rgba(10, 102, 194, 0.1); color: #0A66C2; }
+
+.platform-logo[data-brand="analytics"]:hover { border-color: rgba(249, 171, 0, 0.35); }
+.platform-logo[data-brand="analytics"]:hover .ga-yellow { fill: #F9AB00; }
+.platform-logo[data-brand="analytics"]:hover .ga-orange { fill: #E37400; }
+.platform-logo[data-brand="analytics"]:hover .ga-blue { fill: #E37400; }
+.platform-logo[data-brand="analytics"]:hover .platform-icon { background: rgba(249, 171, 0, 0.12); }
+.platform-logo[data-brand="analytics"]:hover .platform-text { color: #E37400; }
+
+.platform-logo[data-brand="gbp"]:hover { color: #4285F4; border-color: rgba(66, 133, 244, 0.3); }
+.platform-logo[data-brand="gbp"]:hover .platform-icon { background: rgba(66, 133, 244, 0.1); color: #EA4335; }
+
+.platform-logo[data-brand="shopify"]:hover { color: #96BF48; border-color: rgba(150, 191, 72, 0.35); }
+.platform-logo[data-brand="shopify"]:hover .platform-icon { background: rgba(150, 191, 72, 0.12); color: #95BF47; }
+
+.platform-logo[data-brand="wordpress"]:hover { color: #21759B; border-color: rgba(33, 117, 155, 0.3); }
+.platform-logo[data-brand="wordpress"]:hover .platform-icon { background: rgba(33, 117, 155, 0.1); color: #21759B; }
 
 /* ─── PROBLEM ─── */
 .problem-grid {
