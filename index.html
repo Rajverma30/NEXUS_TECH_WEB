@@ -3,152 +3,123 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="VraizenTech - AI-powered web development, digital marketing, chatbot development, and business automation solutions that drive real growth.">
-<meta name="keywords" content="AI solutions, web development, digital marketing, chatbot development, business automation, SEO, LLM">
-<title>VraizenTech - AI-Powered Growth Solutions</title>
+<meta name="description" content="Vraizen Tech — AI-powered digital growth agency. Websites, AI automation and performance marketing engineered to turn attention into customers.">
+<meta name="keywords" content="Vraizen Tech, AI automation, web development, digital marketing, chatbot, SEO, lead generation, WhatsApp automation">
+<meta name="theme-color" content="#FFFFFF">
+<title>Vraizen Tech — AI-Powered Digital Growth</title>
+<link rel="icon" type="image/png" href="logo-light.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- Custom Cursor -->
-<div class="cursor" id="cursor"></div>
-<div class="cursor-follower" id="cursorFollower"></div>
-
 <!-- Floating WhatsApp -->
-<a href="https://wa.me/916232161851" target="_blank" class="wa-float" aria-label="Chat on WhatsApp">
-  <div class="wa-float-pulse"></div>
-  💬
+<a href="https://wa.me/916232161851" target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Chat on WhatsApp">
+  <span class="wa-float-pulse"></span>
+  <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
 <!-- ─── NAVBAR ─── -->
 <nav class="navbar" id="navbar">
   <div class="container">
     <div class="nav-inner">
-      <a href="#" class="logo">
-        <img src="vraizentech-logo.png" alt="VraizenTech" class="logo-img">
+      <a href="#home" class="logo" aria-label="Vraizen Tech home">
+        <img src="logo-light.png" alt="" class="logo-mark" width="40" height="30">
+        <span class="logo-word">Vraizen<span>Tech</span></span>
       </a>
       <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#ai">AI Solutions</a></li>
+        <li><a href="#solutions">Solutions</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#process">Process</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#contact">Contact</a></li>
       </ul>
-      <a href="#contact" class="nav-cta">Get Free Consultation</a>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
+      <a href="#contact" class="nav-cta">Get Started <span aria-hidden="true">→</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
 </nav>
 
-<!-- Mobile Menu -->
-<div class="mobile-menu" id="mobileMenu">
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <a href="#home" class="mobile-link">Home</a>
   <a href="#services" class="mobile-link">Services</a>
-  <a href="#ai" class="mobile-link">AI Solutions</a>
+  <a href="#solutions" class="mobile-link">Solutions</a>
+  <a href="#work" class="mobile-link">Work</a>
+  <a href="#process" class="mobile-link">Process</a>
   <a href="#about" class="mobile-link">About</a>
-  <a href="#portfolio" class="mobile-link">Portfolio</a>
-  <a href="#contact" class="mobile-link">Contact</a>
-  <a href="#contact" class="nav-cta">Get Free Consultation</a>
+  <a href="#contact" class="nav-cta">Get Started →</a>
 </div>
 
 <!-- ─── HERO ─── -->
-<section class="hero" id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-orb hero-orb-1"></div>
-  <div class="hero-orb hero-orb-2"></div>
-  <div class="hero-orb hero-orb-3"></div>
-  <div class="hero-grid"></div>
+<section class="hero" id="home">
+  <div class="hero-glow hero-glow-blue" aria-hidden="true"></div>
+  <div class="hero-glow hero-glow-violet" aria-hidden="true"></div>
   <div class="container hero-content">
     <div class="hero-inner">
-      <div>
-        <div class="hero-badge">
-          <div class="hero-badge-dot"></div>
-          AI-Powered Growth Solutions
-          <span class="free-badge">Free Consult</span>
-        </div>
+      <div class="hero-copy">
         <h1 class="hero-title">
-          We Build, Automate <span class="gradient-text">&amp; Scale</span> Your Business with AI
+          We Build <span class="gradient-text">Digital Systems</span> That Grow Businesses.
         </h1>
         <p class="hero-sub">
-          Web Development, Digital Marketing &amp; AI Solutions that drive real, measurable growth for your business.
+          Websites, AI automation and performance marketing engineered to turn attention into customers.
         </p>
         <div class="hero-actions">
-          <a href="#contact" class="btn-primary">
-            Get Free Consultation <span class="btn-arrow">→</span>
-          </a>
-          <a href="https://wa.me/916232161851" target="_blank" class="btn-secondary">
-            📞 Book a Call
-          </a>
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat">
-            <div class="hero-stat-num" data-count="27">0+</div>
-            <div class="hero-stat-label">Projects Delivered</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-num" data-count="98">0%</div>
-            <div class="hero-stat-label">Client Satisfaction</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-num" data-count="12">0+</div>
-            <div class="hero-stat-label">AI Solutions Built</div>
-          </div>
+          <a href="#contact" class="btn-primary">Start Growing <span class="btn-arrow">→</span></a>
+          <a href="#work" class="btn-secondary">View Our Work</a>
         </div>
       </div>
-      <div class="hero-visual">
-        <div class="hero-card">
-          <div class="ai-terminal">
-            <div class="terminal-header">
-              <div class="terminal-dot red"></div>
-              <div class="terminal-dot yellow"></div>
-              <div class="terminal-dot green"></div>
-            </div>
-            <div class="terminal-line">
-              <span class="terminal-prompt">vraizen@ai:~$ </span>
-              <span class="terminal-cmd" id="terminalCmd"></span>
-              <span class="terminal-cursor"></span>
-            </div>
-            <div class="terminal-line terminal-out" id="terminalOut"></div>
+
+      <div class="hero-visual" aria-hidden="false">
+        <div class="dash-card float-y">
+          <div class="dash-header">
+            <div class="dash-title">Growth Dashboard</div>
+            <div class="dash-live"><span class="live-dot"></span> Live</div>
           </div>
-          <div class="metric-grid">
-            <div class="metric-card">
-              <div class="metric-label">Lead Rate</div>
-              <div class="metric-value green">+247%</div>
-              <div class="metric-change">↑ vs last month</div>
+          <div class="dash-metrics">
+            <div class="dash-metric">
+              <div class="dash-metric-label">Leads</div>
+              <div class="dash-metric-value" data-count="2482">0</div>
+              <div class="dash-metric-delta up">+32.6%</div>
             </div>
-            <div class="metric-card">
-              <div class="metric-label">AI Chats</div>
-              <div class="metric-value blue">12,847</div>
-              <div class="metric-change">↑ 89% this week</div>
+            <div class="dash-metric">
+              <div class="dash-metric-label">Conversion</div>
+              <div class="dash-metric-value" data-count="5.8" data-decimals="1" data-suffix="%">0%</div>
+              <div class="dash-metric-delta up">+14.2%</div>
             </div>
-            <div class="metric-card">
-              <div class="metric-label">Automation</div>
-              <div class="metric-value violet">98.4%</div>
-              <div class="metric-change">↑ uptime</div>
-            </div>
-            <div class="metric-card">
-              <div class="metric-label">Revenue</div>
-              <div class="metric-value cyan">3.2x</div>
-              <div class="metric-change">↑ ROI growth</div>
+            <div class="dash-metric">
+              <div class="dash-metric-label">ROAS</div>
+              <div class="dash-metric-value">4.8x</div>
+              <div class="dash-metric-delta up">Illustrative</div>
             </div>
           </div>
-        </div>
-        <div class="float-badge badge-1">
-          <span class="float-badge-icon">🤖</span>
-          <div>
-            <div style="font-size:11px;color:var(--text-muted)">AI Bot Active</div>
-            <div style="font-size:13px;font-weight:600">24/7 Support</div>
+          <div class="dash-chart">
+            <svg viewBox="0 0 320 120" preserveAspectRatio="none" class="chart-svg">
+              <defs>
+                <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#2563EB" stop-opacity="0.25"/>
+                  <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="chartStroke" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#2563EB"/>
+                  <stop offset="100%" stop-color="#7C3AED"/>
+                </linearGradient>
+              </defs>
+              <path class="chart-area" d="M0,90 C40,85 60,70 90,65 C120,60 140,75 170,50 C200,25 230,40 260,30 C290,20 310,35 320,28 L320,120 L0,120 Z" fill="url(#chartFill)"/>
+              <path class="chart-line" d="M0,90 C40,85 60,70 90,65 C120,60 140,75 170,50 C200,25 230,40 260,30 C290,20 310,35 320,28" fill="none" stroke="url(#chartStroke)" stroke-width="2.5"/>
+              <path class="chart-line secondary" d="M0,100 C50,95 80,88 110,82 C150,72 180,78 210,60 C250,40 280,55 320,48" fill="none" stroke="#8B5CF6" stroke-width="1.5" stroke-opacity="0.55"/>
+            </svg>
           </div>
-        </div>
-        <div class="float-badge badge-2">
-          <span class="float-badge-icon">🚀</span>
-          <div>
-            <div style="font-size:11px;color:var(--text-muted)">Growth Score</div>
-            <div style="font-size:13px;font-weight:600;color:#22c55e">Excellent</div>
+          <div class="dash-footer">
+            <div class="ai-pill">
+              <span class="ai-dot"></span>
+              AI Automation Active
+            </div>
+            <div class="dash-growth">Growth +32.6%</div>
           </div>
         </div>
       </div>
@@ -156,509 +127,471 @@
   </div>
 </section>
 
-<!-- ─── OUR WORK ─── -->
-<section class="section" id="portfolio">
+<!-- ─── PLATFORMS ─── -->
+<section class="platforms-section" aria-label="Platforms">
   <div class="container">
-    <div class="reveal" style="text-align:center">
-      <div class="section-label">Our Work</div>
-      <h2 class="section-title">Projects We Have <span class="gradient-text">Built</span></h2>
-      <p class="section-sub" style="margin:0 auto">Live websites from different industries that you can open and review.</p>
-    </div>
-    <div class="portfolio-grid">
-      <div class="portfolio-card reveal delay-1">
-        <div class="portfolio-thumb">
-          <div class="portfolio-thumb-bg" style="background:linear-gradient(135deg,#0a2008,#021428)"></div>
-          <div class="portfolio-thumb-icon">🏥</div>
-          <div class="portfolio-overlay">
-            <a href="https://natik-narsing-web.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-action">Live Website</a>
-          </div>
-        </div>
-        <div class="portfolio-info">
-          <div class="portfolio-cat">Nursing + Housekeeping</div>
-          <div class="portfolio-name">Naitik Enterprises</div>
-          <div class="portfolio-desc">Service website for nursing and housekeeping with clear service flow and contact options.</div>
-          <div class="portfolio-meta">
-            <span class="tag">Service Website</span><span class="tag">Mobile Friendly</span><span class="tag">Vercel</span>
-          </div>
-        </div>
-      </div>
-      <div class="portfolio-card reveal delay-2">
-        <div class="portfolio-thumb">
-          <div class="portfolio-thumb-bg" style="background:linear-gradient(135deg,#1a0533,#0a1628)"></div>
-          <div class="portfolio-thumb-icon">🛒</div>
-          <div class="portfolio-overlay">
-            <a href="https://shubham-xerox.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio-action">Live Website</a>
-          </div>
-        </div>
-        <div class="portfolio-info">
-          <div class="portfolio-cat">Book Shop E-Commerce</div>
-          <div class="portfolio-name">Shubham Xerox Book Shop</div>
-          <div class="portfolio-desc">Book shop e-commerce website for browsing books and placing orders through a simple buying flow.</div>
-          <div class="portfolio-meta">
-            <span class="tag">Book Shop</span><span class="tag">E-Commerce</span><span class="tag">Vercel</span>
-          </div>
-        </div>
-      </div>
-      <div class="portfolio-card reveal delay-3">
-        <div class="portfolio-thumb">
-          <div class="portfolio-thumb-bg" style="background:linear-gradient(135deg,#001a15,#001535)"></div>
-          <div class="portfolio-thumb-icon">🏘️</div>
-          <div class="portfolio-overlay">
-            <a href="https://real-state-demo-web.netlify.app/" target="_blank" rel="noopener noreferrer" class="portfolio-action">Live Website</a>
-          </div>
-        </div>
-        <div class="portfolio-info">
-          <div class="portfolio-cat">Real Estate</div>
-          <div class="portfolio-name">Real Estate Demo Web</div>
-          <div class="portfolio-desc">Real estate listing experience designed for property showcase, trust, and lead generation.</div>
-          <div class="portfolio-meta">
-            <span class="tag">Real Estate</span><span class="tag">Lead Focused</span><span class="tag">Netlify</span>
-          </div>
-        </div>
-      </div>
+    <p class="platforms-heading">Powered by the platforms your customers already use.</p>
+  </div>
+  <div class="logo-marquee" aria-hidden="true">
+    <div class="logo-marquee-track">
+      <div class="platform-logo" data-brand="google"><span>Google Ads</span></div>
+      <div class="platform-logo" data-brand="meta"><span>Meta</span></div>
+      <div class="platform-logo" data-brand="instagram"><span>Instagram</span></div>
+      <div class="platform-logo" data-brand="facebook"><span>Facebook</span></div>
+      <div class="platform-logo" data-brand="whatsapp"><span>WhatsApp</span></div>
+      <div class="platform-logo" data-brand="linkedin"><span>LinkedIn</span></div>
+      <div class="platform-logo" data-brand="youtube"><span>YouTube</span></div>
+      <div class="platform-logo" data-brand="analytics"><span>Google Analytics</span></div>
+      <div class="platform-logo" data-brand="gbp"><span>Google Business Profile</span></div>
+      <div class="platform-logo" data-brand="shopify"><span>Shopify</span></div>
+      <div class="platform-logo" data-brand="wordpress"><span>WordPress</span></div>
+      <!-- duplicate for seamless loop -->
+      <div class="platform-logo" data-brand="google"><span>Google Ads</span></div>
+      <div class="platform-logo" data-brand="meta"><span>Meta</span></div>
+      <div class="platform-logo" data-brand="instagram"><span>Instagram</span></div>
+      <div class="platform-logo" data-brand="facebook"><span>Facebook</span></div>
+      <div class="platform-logo" data-brand="whatsapp"><span>WhatsApp</span></div>
+      <div class="platform-logo" data-brand="linkedin"><span>LinkedIn</span></div>
+      <div class="platform-logo" data-brand="youtube"><span>YouTube</span></div>
+      <div class="platform-logo" data-brand="analytics"><span>Google Analytics</span></div>
+      <div class="platform-logo" data-brand="gbp"><span>Google Business Profile</span></div>
+      <div class="platform-logo" data-brand="shopify"><span>Shopify</span></div>
+      <div class="platform-logo" data-brand="wordpress"><span>WordPress</span></div>
     </div>
   </div>
 </section>
 
-<div class="section-divider"></div>
-
-<!-- ─── MARQUEE ─── -->
-<div class="marquee-section">
-  <div class="marquee-track" id="marqueeTrack">
-    <div class="marquee-item"><span>💻</span> Web Development</div>
-    <div class="marquee-item"><span>📈</span> SEO &amp; Growth</div>
-    <div class="marquee-item"><span>🤖</span> AI Chatbots</div>
-    <div class="marquee-item"><span>⚙️</span> Business Automation</div>
-    <div class="marquee-item"><span>🎯</span> Google Ads &amp; PPC</div>
-    <div class="marquee-item"><span>🧠</span> LLM Solutions</div>
-    <div class="marquee-item"><span>📱</span> Meta Ads</div>
-    <div class="marquee-item"><span>💬</span> WhatsApp Bots</div>
-    <div class="marquee-item"><span>🔗</span> CRM Automation</div>
-    <div class="marquee-item"><span>📊</span> Lead Generation</div>
-    <!-- Duplicate for seamless loop -->
-    <div class="marquee-item"><span>💻</span> Web Development</div>
-    <div class="marquee-item"><span>📈</span> SEO &amp; Growth</div>
-    <div class="marquee-item"><span>🤖</span> AI Chatbots</div>
-    <div class="marquee-item"><span>⚙️</span> Business Automation</div>
-    <div class="marquee-item"><span>🎯</span> Google Ads &amp; PPC</div>
-    <div class="marquee-item"><span>🧠</span> LLM Solutions</div>
-    <div class="marquee-item"><span>📱</span> Meta Ads</div>
-    <div class="marquee-item"><span>💬</span> WhatsApp Bots</div>
-    <div class="marquee-item"><span>🔗</span> CRM Automation</div>
-    <div class="marquee-item"><span>📊</span> Lead Generation</div>
+<!-- ─── PROBLEM ─── -->
+<section class="section" id="solutions">
+  <div class="container">
+    <div class="reveal section-head">
+      <h2 class="section-title">Your business doesn't need more tools.<br>It needs a better <span class="gradient-text">growth system</span>.</h2>
+    </div>
+    <div class="problem-grid">
+      <article class="problem-card reveal delay-1">
+        <div class="problem-num">01</div>
+        <div class="problem-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        </div>
+        <h3>Disconnected Tools</h3>
+        <p>Ads, website, CRM and messaging live in silos — so opportunities slip through the cracks.</p>
+      </article>
+      <article class="problem-card reveal delay-2">
+        <div class="problem-num">02</div>
+        <div class="problem-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M5 8h14M5 16h14"/><circle cx="8" cy="8" r="1.5" fill="currentColor"/><circle cx="16" cy="16" r="1.5" fill="currentColor"/></svg>
+        </div>
+        <h3>Manual Workflows</h3>
+        <p>Repetitive tasks slow your team down and make growth harder to sustain.</p>
+      </article>
+      <article class="problem-card reveal delay-3">
+        <div class="problem-num">03</div>
+        <div class="problem-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a4 4 0 01-4 4H8l-5 3V7a4 4 0 014-4h10a4 4 0 014 4z"/><path d="M8 10h8M8 14h5"/></svg>
+        </div>
+        <h3>Poor Lead Follow-up</h3>
+        <p>Leads go cold when responses are slow, inconsistent, or forgotten.</p>
+      </article>
+      <article class="problem-card reveal delay-4">
+        <div class="problem-num">04</div>
+        <div class="problem-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 6-7"/></svg>
+        </div>
+        <h3>Marketing Without Clear ROI</h3>
+        <p>Spend without a connected measurement system makes scaling guesswork.</p>
+      </article>
+    </div>
   </div>
-</div>
+</section>
+
+<!-- ─── GROWTH SYSTEM ─── -->
+<section class="section section-alt" id="system">
+  <div class="container">
+    <div class="reveal section-head center">
+      <h2 class="section-title">One connected <span class="gradient-text">system</span>.</h2>
+      <p class="section-sub">From attention to acquisition — every layer talks to the next.</p>
+    </div>
+    <div class="flow-system reveal" id="flowSystem">
+      <div class="flow-node" data-step="0"><span>Ads</span></div>
+      <div class="flow-connector" data-step="0" aria-hidden="true"><span></span></div>
+      <div class="flow-node" data-step="1"><span>Website</span></div>
+      <div class="flow-connector" data-step="1" aria-hidden="true"><span></span></div>
+      <div class="flow-node" data-step="2"><span>AI</span></div>
+      <div class="flow-connector" data-step="2" aria-hidden="true"><span></span></div>
+      <div class="flow-node" data-step="3"><span>WhatsApp</span></div>
+      <div class="flow-connector" data-step="3" aria-hidden="true"><span></span></div>
+      <div class="flow-node" data-step="4"><span>CRM</span></div>
+      <div class="flow-connector" data-step="4" aria-hidden="true"><span></span></div>
+      <div class="flow-node accent" data-step="5"><span>Customer</span></div>
+    </div>
+  </div>
+</section>
 
 <!-- ─── SERVICES ─── -->
 <section class="section" id="services">
   <div class="container">
-    <div class="reveal">
-      <div class="section-label">What We Do</div>
-      <h2 class="section-title">Services Built for <span class="gradient-text">Real Growth</span></h2>
-      <p class="section-sub">End-to-end digital solutions powered by AI and automation to accelerate your business at scale.</p>
+    <div class="reveal section-head">
+      <h2 class="section-title">Everything you need to <span class="gradient-text">grow online</span>.</h2>
+      <p class="section-sub">A complete digital growth stack — strategy, build, automation and acquisition.</p>
     </div>
     <div class="services-grid">
-      <div class="service-card reveal delay-1">
-        <div class="service-icon">💻</div>
-        <div class="service-title">Website Development</div>
-        <div class="service-desc">Blazing-fast, conversion-optimized websites built with modern tech. From landing pages to full SaaS platforms.</div>
-        <div class="service-tags">
-          <span class="tag">React</span>
-          <span class="tag">Next.js</span>
-          <span class="tag">WordPress</span>
-          <span class="tag">Webflow</span>
-        </div>
-        <div class="service-arrow">↗</div>
-      </div>
-      <div class="service-card reveal delay-2">
-        <div class="service-icon">📈</div>
-        <div class="service-title">Digital Marketing</div>
-        <div class="service-desc">Full-funnel digital marketing — SEO, Google Ads, PPC, Meta Ads — engineered to maximize your ROI.</div>
-        <div class="service-tags">
-          <span class="tag">SEO</span>
-          <span class="tag">GEO</span>
-          <span class="tag">Google Ads</span>
-          <span class="tag">Meta Ads</span>
-        </div>
-        <div class="service-arrow">↗</div>
-      </div>
-      <div class="service-card reveal delay-3">
-        <div class="service-icon">🧠</div>
-        <div class="service-title">AI Solutions</div>
-        <div class="service-desc">Custom LLM applications, AI tools, and smart assistants that automate complex tasks and augment your team.</div>
-        <div class="service-tags">
-          <span class="tag">LLM Apps</span>
-          <span class="tag">GPT-4</span>
-          <span class="tag">Claude</span>
-          <span class="tag">RAG Systems</span>
-        </div>
-        <div class="service-arrow">↗</div>
-      </div>
-      <div class="service-card reveal delay-1">
-        <div class="service-icon">💬</div>
-        <div class="service-title">Chatbot Development</div>
-        <div class="service-desc">AI-powered chatbots for your website, WhatsApp, and Instagram — engage leads and support customers 24/7.</div>
-        <div class="service-tags">
-          <span class="tag">WhatsApp Bot</span>
-          <span class="tag">Website Bot</span>
-          <span class="tag">Instagram</span>
-          <span class="tag">Multilingual</span>
-        </div>
-        <div class="service-arrow">↗</div>
-      </div>
-      <div class="service-card reveal delay-2">
-        <div class="service-icon">⚙️</div>
-        <div class="service-title">Business Automation</div>
-        <div class="service-desc">Automate lead generation, CRM workflows, email sequences, and repetitive operations to scale without hiring.</div>
-        <div class="service-tags">
-          <span class="tag">Zapier</span>
-          <span class="tag">Make.com</span>
-          <span class="tag">CRM</span>
-          <span class="tag">Workflows</span>
-        </div>
-        <div class="service-arrow">↗</div>
-      </div>
-      <div class="service-card reveal delay-3" style="background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(139,92,246,0.08)); border-color: rgba(139,92,246,0.25);">
-        <div style="display:flex;align-items:center;justify-content:center;height:100%;flex-direction:column;text-align:center;gap:16px;">
-          <div style="font-size:48px;">🚀</div>
-          <div class="service-title">Ready to Scale?</div>
-          <p class="service-desc">Let's discuss a custom solution for your unique business needs.</p>
-          <a href="#contact" class="btn-primary" style="margin-top:8px">Get Free Strategy Call</a>
-        </div>
-      </div>
+      <article class="service-card reveal delay-1">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/><path d="M19 14l.8 2.2L22 17l-2.2.8L19 20l-.8-2.2L16 17l2.2-.8L19 14z"/></svg></div>
+        <h3>AI Automation</h3>
+        <p>Intelligent workflows that automate repetitive business operations.</p>
+      </article>
+      <article class="service-card reveal delay-2">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a4 4 0 01-4 4H8l-5 3V7a4 4 0 014-4h10a4 4 0 014 4z"/></svg></div>
+        <h3>AI Chatbots</h3>
+        <p>AI-powered customer support and lead qualification.</p>
+      </article>
+      <article class="service-card reveal delay-3">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div>
+        <h3>Website Development</h3>
+        <p>Fast, modern and conversion-focused websites.</p>
+      </article>
+      <article class="service-card reveal delay-1">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M3 4h2l2.4 11.2a2 2 0 002 1.6h7.8a2 2 0 001.9-1.5L21 8H7"/></svg></div>
+        <h3>E-commerce</h3>
+        <p>Online stores designed for performance and sales.</p>
+      </article>
+      <article class="service-card reveal delay-2">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M5 8h14M5 16h14"/><circle cx="9" cy="8" r="1.5" fill="currentColor"/><circle cx="15" cy="16" r="1.5" fill="currentColor"/></svg></div>
+        <h3>Digital Marketing</h3>
+        <p>Google and Meta campaigns focused on measurable growth.</p>
+      </article>
+      <article class="service-card reveal delay-3">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+        <h3>SEO</h3>
+        <p>Increase visibility, rankings and organic traffic.</p>
+      </article>
+      <article class="service-card reveal delay-1">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="3"/><path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a3 3 0 010 5.74"/></svg></div>
+        <h3>Lead Generation</h3>
+        <p>Generate qualified leads through paid and organic channels.</p>
+      </article>
+      <article class="service-card reveal delay-2">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8v.5z"/></svg></div>
+        <h3>WhatsApp Automation</h3>
+        <p>Automated conversations and follow-ups.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<div class="section-divider"></div>
-
-<!-- ─── AI SHOWCASE ─── -->
-<section class="section ai-section" id="ai">
+<!-- ─── MARKETING DASHBOARD ─── -->
+<section class="section section-alt" id="measure">
   <div class="container">
-    <div class="ai-inner">
-      <div class="reveal-left">
-        <div class="section-label">AI Showcase</div>
-        <h2 class="section-title">Intelligence <span class="gradient-text">Built In</span> at Every Layer</h2>
-        <p class="section-sub">We harness cutting-edge LLMs — GPT-4, Claude, Gemini — to build systems that think, respond, and act like your best team member.</p>
-        <div class="ai-features">
-          <div class="ai-feature reveal delay-1">
-            <div class="ai-feature-icon">🛎️</div>
-            <div>
-              <div class="ai-feature-title">Customer Support Bots</div>
-              <div class="ai-feature-desc">Handle thousands of queries simultaneously with human-like understanding. Reduce support costs by up to 70%.</div>
-            </div>
-          </div>
-          <div class="ai-feature reveal delay-2">
-            <div class="ai-feature-icon">💼</div>
-            <div>
-              <div class="ai-feature-title">AI Sales Assistants</div>
-              <div class="ai-feature-desc">Qualify leads, answer product questions, and schedule demos — autonomously, around the clock.</div>
-            </div>
-          </div>
-          <div class="ai-feature reveal delay-3">
-            <div class="ai-feature-icon">⚡</div>
-            <div>
-              <div class="ai-feature-title">Automated Lead Response</div>
-              <div class="ai-feature-desc">Instant, personalized responses to every lead within seconds. Never lose a prospect to slow follow-up again.</div>
-            </div>
-          </div>
+    <div class="reveal section-head center">
+      <h2 class="section-title">Marketing that you can <span class="gradient-text">measure</span>.</h2>
+      <p class="section-sub">Illustrative dashboard showing the metrics we track across connected growth systems.</p>
+    </div>
+    <div class="analytics-board reveal">
+      <div class="analytics-grid-bg" aria-hidden="true"></div>
+      <div class="analytics-stats">
+        <div class="analytics-stat">
+          <div class="analytics-label">Leads Generated</div>
+          <div class="analytics-value" data-count="2482">0</div>
+          <div class="analytics-note">Demo metric</div>
+        </div>
+        <div class="analytics-stat">
+          <div class="analytics-label">Conversion Rate</div>
+          <div class="analytics-value">5.8%</div>
+          <div class="analytics-note">Demo metric</div>
+        </div>
+        <div class="analytics-stat">
+          <div class="analytics-label">Ad ROAS</div>
+          <div class="analytics-value">4.8x</div>
+          <div class="analytics-note">Demo metric</div>
+        </div>
+        <div class="analytics-stat">
+          <div class="analytics-label">Growth</div>
+          <div class="analytics-value gradient-text">+32.6%</div>
+          <div class="analytics-note">Demo metric</div>
         </div>
       </div>
-      <div class="ai-visual-wrap reveal-right">
-        <div class="ai-brain-bg"></div>
-        <div class="ai-nodes">
-          <div class="orbit-ring orbit-ring-1">
-            <div class="orbit-node orbit-node-1" style="margin:-18px 0 0 -18px">🛎️</div>
-          </div>
-          <div class="orbit-ring orbit-ring-2">
-            <div class="orbit-node orbit-node-2" style="margin:-18px 0 0 -18px">📊</div>
-          </div>
-          <div class="orbit-ring orbit-ring-3">
-            <div class="orbit-node orbit-node-3" style="margin:-18px 0 0 -18px">⚡</div>
-          </div>
-          <div class="ai-center-node">🧠</div>
-        </div>
+      <div class="analytics-chart">
+        <svg viewBox="0 0 720 220" class="big-chart" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="bigFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#2563EB" stop-opacity="0.2"/>
+              <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="bigStroke" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#2563EB"/>
+              <stop offset="100%" stop-color="#7C3AED"/>
+            </linearGradient>
+          </defs>
+          <g class="chart-grid" stroke="#E2E8F0" stroke-width="1">
+            <line x1="0" y1="40" x2="720" y2="40"/>
+            <line x1="0" y1="90" x2="720" y2="90"/>
+            <line x1="0" y1="140" x2="720" y2="140"/>
+            <line x1="0" y1="190" x2="720" y2="190"/>
+          </g>
+          <path class="chart-area" d="M0,170 C60,160 100,140 150,130 C220,115 260,150 320,110 C380,70 430,90 490,60 C560,28 620,70 720,40 L720,220 L0,220 Z" fill="url(#bigFill)"/>
+          <path class="chart-line animate-draw" d="M0,170 C60,160 100,140 150,130 C220,115 260,150 320,110 C380,70 430,90 490,60 C560,28 620,70 720,40" fill="none" stroke="url(#bigStroke)" stroke-width="3"/>
+          <path class="chart-line secondary animate-draw" d="M0,190 C80,180 140,165 200,155 C280,140 340,160 400,130 C470,95 540,120 720,80" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-opacity="0.6"/>
+        </svg>
       </div>
     </div>
   </div>
 </section>
 
-<div class="section-divider"></div>
+<!-- ─── PROCESS ─── -->
+<section class="section" id="process">
+  <div class="container">
+    <div class="reveal section-head center">
+      <h2 class="section-title">From attention to <span class="gradient-text">acquisition</span>.</h2>
+    </div>
+    <div class="timeline">
+      <div class="timeline-line" aria-hidden="true"></div>
+      <div class="timeline-step reveal delay-1">
+        <div class="timeline-dot">01</div>
+        <h3>Reach</h3>
+        <p>Get your brand in front of the right audience.</p>
+      </div>
+      <div class="timeline-step reveal delay-2">
+        <div class="timeline-dot">02</div>
+        <h3>Capture</h3>
+        <p>Turn visitors into qualified leads.</p>
+      </div>
+      <div class="timeline-step reveal delay-3">
+        <div class="timeline-dot">03</div>
+        <h3>Nurture</h3>
+        <p>AI-powered follow-up and automation.</p>
+      </div>
+      <div class="timeline-step reveal delay-4">
+        <div class="timeline-dot">04</div>
+        <h3>Convert</h3>
+        <p>Turn leads into customers.</p>
+      </div>
+      <div class="timeline-step reveal delay-5">
+        <div class="timeline-dot">05</div>
+        <h3>Scale</h3>
+        <p>Scale what actually works.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- ─── ABOUT ─── -->
+<!-- ─── CASE STUDIES / WORK ─── -->
+<section class="section section-alt" id="work">
+  <div class="container">
+    <div class="reveal section-head">
+      <h2 class="section-title">Built for businesses. Designed for <span class="gradient-text">growth</span>.</h2>
+      <p class="section-sub">Selected live projects you can open and review.</p>
+    </div>
+    <div class="work-grid">
+      <article class="work-card reveal delay-1">
+        <div class="work-visual" style="--work-a:#2563EB;--work-b:#7C3AED">
+          <div class="work-visual-inner">
+            <span class="work-mark">SX</span>
+            <span class="work-visual-label">E-commerce</span>
+          </div>
+        </div>
+        <div class="work-body">
+          <div class="work-cat">Book Shop E-Commerce</div>
+          <h3>Shubham Xerox Book Shop</h3>
+          <p>Book shop e-commerce website for browsing books and placing orders through a simple buying flow.</p>
+          <div class="work-tags">
+            <span>Book Shop</span><span>E-Commerce</span><span>Vercel</span>
+          </div>
+          <a href="https://shubham-xerox.vercel.app/" target="_blank" rel="noopener noreferrer" class="work-link">View Case Study <span>→</span></a>
+        </div>
+      </article>
+      <article class="work-card reveal delay-2">
+        <div class="work-visual" style="--work-a:#1D4ED8;--work-b:#8B5CF6">
+          <div class="work-visual-inner">
+            <span class="work-mark">NE</span>
+            <span class="work-visual-label">Services</span>
+          </div>
+        </div>
+        <div class="work-body">
+          <div class="work-cat">Nursing + Housekeeping</div>
+          <h3>Naitik Enterprises</h3>
+          <p>Service website for nursing and housekeeping with clear service flow and contact options.</p>
+          <div class="work-tags">
+            <span>Service Website</span><span>Mobile Friendly</span><span>Vercel</span>
+          </div>
+          <a href="https://natik-narsing-web.vercel.app/" target="_blank" rel="noopener noreferrer" class="work-link">View Case Study <span>→</span></a>
+        </div>
+      </article>
+      <article class="work-card reveal delay-3">
+        <div class="work-visual" style="--work-a:#2563EB;--work-b:#7C3AED">
+          <div class="work-visual-inner">
+            <span class="work-mark">RE</span>
+            <span class="work-visual-label">Real Estate</span>
+          </div>
+        </div>
+        <div class="work-body">
+          <div class="work-cat">Real Estate</div>
+          <h3>Real Estate Demo Web</h3>
+          <p>Real estate listing experience designed for property showcase, trust, and lead generation.</p>
+          <div class="work-tags">
+            <span>Real Estate</span><span>Lead Focused</span><span>Netlify</span>
+          </div>
+          <a href="https://real-state-demo-web.netlify.app/" target="_blank" rel="noopener noreferrer" class="work-link">View Case Study <span>→</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY VRAIZEN ─── -->
 <section class="section" id="about">
   <div class="container">
-    <div class="about-inner">
-      <div class="about-img-wrap reveal-left">
-        <div class="about-img-grid">
-          <div class="about-img-card">🔭</div>
-          <div class="about-img-card">⚡</div>
-          <div class="about-img-card">🛠️</div>
-          <div class="about-img-card">🌐</div>
-        </div>
-        <div class="about-value-badge">
-          <div class="about-value-num">5★</div>
-          <div class="about-value-label">Average Rating</div>
-        </div>
-      </div>
-      <div class="reveal-right">
-        <div class="section-label">About VraizenTech</div>
-        <h2 class="section-title">Built by Builders, <span class="gradient-text">For Builders</span></h2>
-        <p class="section-sub">We're a young, agile tech team obsessed with one thing: making your business grow faster using AI and digital systems that actually work.</p>
-        <div class="about-points">
-          <div class="about-point">
-            <div class="about-point-icon">✓</div>
-            <div class="about-point-text"><strong>Mission:</strong> Democratize AI and automation for businesses of every size — from startups to enterprises.</div>
-          </div>
-          <div class="about-point">
-            <div class="about-point-icon">✓</div>
-            <div class="about-point-text"><strong>Approach:</strong> We don't just build tools. We build growth systems tailored to your business goals.</div>
-          </div>
-          <div class="about-point">
-            <div class="about-point-icon">✓</div>
-            <div class="about-point-text"><strong>Speed:</strong> Fast delivery without compromising quality — most projects delivered in 2–4 weeks.</div>
-          </div>
-          <div class="about-point">
-            <div class="about-point-icon">✓</div>
-            <div class="about-point-text"><strong>Transparency:</strong> No hidden fees, no jargon. Just clear timelines, honest pricing, and real results.</div>
-          </div>
-        </div>
-        <div style="margin-top:32px;">
-          <a href="#contact" class="btn-primary">Work With Us <span class="btn-arrow">→</span></a>
-        </div>
-      </div>
+    <div class="reveal why-statement">
+      <h2 class="section-title xl">We don't just build websites.<br>We build <span class="gradient-text">growth systems</span>.</h2>
+    </div>
+    <div class="principles-grid">
+      <article class="principle reveal delay-1">
+        <h3>Strategy First</h3>
+        <p>Understand the business before building.</p>
+      </article>
+      <article class="principle reveal delay-2">
+        <h3>AI-Powered</h3>
+        <p>Use AI where it creates real business value.</p>
+      </article>
+      <article class="principle reveal delay-3">
+        <h3>Performance Driven</h3>
+        <p>Focus on measurable outcomes.</p>
+      </article>
+      <article class="principle reveal delay-4">
+        <h3>Built To Scale</h3>
+        <p>Create systems that can grow with the business.</p>
+      </article>
     </div>
   </div>
 </section>
 
-<div class="section-divider"></div>
-
-<!-- ─── WHY CHOOSE ─── -->
-<section class="section why-section" id="why">
+<!-- ─── TECHNOLOGY ─── -->
+<section class="section section-alt" id="tech">
   <div class="container">
-    <div class="reveal" style="text-align:center">
-      <div class="section-label">Why VraizenTech</div>
-      <h2 class="section-title">The Unfair <span class="gradient-text">Advantage</span></h2>
-      <p class="section-sub" style="margin:0 auto">What sets us apart from every other agency out there.</p>
+    <div class="reveal section-head center">
+      <h2 class="section-title">Built with modern <span class="gradient-text">technology</span>.</h2>
     </div>
-    <div class="why-grid">
-      <div class="why-card reveal delay-1">
-        <span class="why-icon">🤖</span>
-        <div class="why-title">AI-First Approach</div>
-        <div class="why-desc">Every solution we build is powered by AI — not as a gimmick, but as a core driver of real efficiency and growth.</div>
+    <div class="tech-ecosystem">
+      <div class="tech-group reveal delay-1">
+        <div class="tech-cat">AI</div>
+        <div class="tech-pills">
+          <span>LLMs</span><span>AI Agents</span><span>RAG</span><span>Automation</span>
+        </div>
       </div>
-      <div class="why-card reveal delay-2">
-        <span class="why-icon">⚡</span>
-        <div class="why-title">Lightning Fast Delivery</div>
-        <div class="why-desc">Most projects launched in 2–4 weeks. We move fast without cutting corners, because speed is a competitive advantage.</div>
+      <div class="tech-group reveal delay-2">
+        <div class="tech-cat">Development</div>
+        <div class="tech-pills">
+          <span>Python</span><span>FastAPI</span><span>React</span><span>Next.js</span>
+        </div>
       </div>
-      <div class="why-card reveal delay-3">
-        <span class="why-icon">💰</span>
-        <div class="why-title">Affordable Pricing</div>
-        <div class="why-desc">Enterprise-grade solutions at startup-friendly prices. No bloated agency overhead — just results.</div>
+      <div class="tech-group reveal delay-3">
+        <div class="tech-cat">Cloud</div>
+        <div class="tech-pills">
+          <span>Vercel</span><span>Google Cloud</span><span>Supabase</span><span>MongoDB</span>
+        </div>
       </div>
-      <div class="why-card reveal delay-4">
-        <span class="why-icon">📈</span>
-        <div class="why-title">ROI-Obsessed</div>
-        <div class="why-desc">We measure success by your growth metrics — leads, revenue, and conversions — not vanity KPIs.</div>
-      </div>
-      <div class="why-card reveal delay-5">
-        <span class="why-icon">🔒</span>
-        <div class="why-title">Full Ownership</div>
-        <div class="why-desc">You own 100% of what we build. Complete code handoff, documentation, and ongoing support included.</div>
-      </div>
-      <div class="why-card reveal delay-1">
-        <span class="why-icon">🌍</span>
-        <div class="why-title">24/7 Support</div>
-        <div class="why-desc">Our team and your AI systems are always on. Critical issues get same-day attention, guaranteed.</div>
+      <div class="tech-group reveal delay-4">
+        <div class="tech-cat">Marketing</div>
+        <div class="tech-pills">
+          <span>Google Ads</span><span>Meta Ads</span><span>Analytics</span><span>SEO</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="section-divider"></div>
-
-<!-- ─── TESTIMONIALS ─── -->
-<section class="section" id="testimonials">
-  <div class="container">
-    <div class="reveal" style="text-align:center">
-      <div class="section-label">Testimonials</div>
-      <h2 class="section-title">What Clients <span class="gradient-text">Say</span></h2>
-      <p class="section-sub" style="margin:0 auto">Simple, honest feedback from real work.</p>
-    </div>
-
-    <div class="testimonials-grid">
-
-      <div class="testimonial-card reveal delay-1">
-        <div class="testimonial-quote">"</div>
-        <div class="stars">★★★★★</div>
-        <div class="testimonial-text">
-          The website looks clean and professional. Everything works smoothly and was delivered on time.
-        </div>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar" style="background:linear-gradient(135deg,#6366f1,#8b5cf6)">AK</div>
-          <div>
-            <div class="testimonial-name">Amit Kumar</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card reveal delay-2">
-        <div class="testimonial-quote">"</div>
-        <div class="stars">★★★★★</div>
-        <div class="testimonial-text">
-          Very responsive and easy to work with. The design came out exactly how we wanted.
-        </div>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar" style="background:linear-gradient(135deg,#0ea5e9,#22d3ee)">SP</div>
-          <div>
-            <div class="testimonial-name">Saurabh Patel</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card reveal delay-3">
-        <div class="testimonial-quote">"</div>
-        <div class="stars">★★★★★</div>
-        <div class="testimonial-text">
-          Good experience overall. The site is fast, mobile-friendly, and easy to manage.
-        </div>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar" style="background:linear-gradient(135deg,#22c55e,#0ea5e9)">NK</div>
-          <div>
-            <div class="testimonial-name">Neha Khanna</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card reveal delay-1">
-        <div class="testimonial-quote">"</div>
-        <div class="stars">★★★★★</div>
-        <div class="testimonial-text">
-          Clean UI and smooth performance. Happy with the final result.
-        </div>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar" style="background:linear-gradient(135deg,#f59e0b,#ef4444)">RS</div>
-          <div>
-            <div class="testimonial-name">Rohit Sharma</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ─── CTA ─── -->
+<!-- ─── FINAL CTA ─── -->
 <section class="cta-section" id="cta">
-  <div class="cta-bg"></div>
-  <div class="cta-orb"></div>
-  <div class="container cta-inner">
-    <div class="reveal">
-      <div class="section-label" style="margin:0 auto 20px;">Ready to Scale?</div>
-      <h2 class="cta-title">Let's Automate &amp; Scale <span class="gradient-text">Your Business</span></h2>
-      <p class="cta-sub">Join 27+ businesses already growing faster with VraizenTech's AI-powered solutions.</p>
-      <div class="cta-actions">
-        <a href="#contact" class="btn-primary">Start Now — It's Free <span class="btn-arrow">→</span></a>
-        <a href="https://wa.me/916232161851" target="_blank" class="btn-secondary">💬 WhatsApp Us</a>
-      </div>
-    </div>
+  <div class="cta-glow" aria-hidden="true"></div>
+  <div class="container cta-inner reveal">
+    <h2 class="cta-title">Ready to build something that grows?</h2>
+    <p class="cta-sub">Tell us what you're building. We'll figure out how to make it better.</p>
+    <a href="#contact" class="btn-primary btn-lg">Start a Project <span class="btn-arrow">→</span></a>
   </div>
 </section>
 
 <!-- ─── CONTACT ─── -->
 <section class="section" id="contact">
   <div class="container">
-    <div class="reveal" style="text-align:center;margin-bottom:60px">
-      <div class="section-label">Contact</div>
-      <h2 class="section-title">Let's Build <span class="gradient-text">Together</span></h2>
-      <p class="section-sub" style="margin:0 auto">Get your free consultation today. We typically respond within 2 hours.</p>
+    <div class="reveal section-head center" style="margin-bottom:48px">
+      <h2 class="section-title">Let's build <span class="gradient-text">together</span>.</h2>
+      <p class="section-sub" style="margin:0 auto">Get your free consultation. We typically respond within 2 hours.</p>
     </div>
     <div class="contact-inner">
       <div class="contact-info reveal-left">
-        <div>
-          <h3 style="font-family:var(--font-display);font-size:22px;font-weight:700;margin-bottom:8px">Get in Touch</h3>
-          <p style="color:var(--text-secondary);font-size:15px;line-height:1.7">Tell us about your project and we'll craft a custom growth strategy — absolutely free.</p>
-        </div>
+        <h3>Get in Touch</h3>
+        <p>Tell us about your project and we'll craft a custom growth strategy — free.</p>
         <div class="contact-item">
-          <div class="contact-item-icon">📧</div>
+          <div class="contact-item-icon">@</div>
           <div>
             <div class="contact-item-label">Email</div>
-            <div class="contact-item-value">technexus@gmail.com</div>
+            <a class="contact-item-value" href="mailto:technexus@gmail.com">technexus@gmail.com</a>
           </div>
         </div>
         <div class="contact-item">
-          <div class="contact-item-icon">📱</div>
+          <div class="contact-item-icon">☎</div>
           <div>
             <div class="contact-item-label">Phone / WhatsApp</div>
-            <div class="contact-item-value">+91 6232161851</div>
+            <a class="contact-item-value" href="https://wa.me/916232161851">+91 6232161851</a>
           </div>
         </div>
         <div class="contact-item">
-          <div class="contact-item-icon">📍</div>
+          <div class="contact-item-icon">⌖</div>
           <div>
             <div class="contact-item-label">Location</div>
             <div class="contact-item-value">Indore, India · Remote Worldwide</div>
           </div>
         </div>
-        <a href="https://wa.me/916232161851" target="_blank" class="whatsapp-btn">
-          💬 Quick Chat on WhatsApp
-        </a>
+        <a href="https://wa.me/916232161851" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">Quick Chat on WhatsApp</a>
       </div>
       <div class="contact-form reveal-right">
-        <div id="formSuccess" style="display:none;text-align:center;padding:40px 0">
-          <div style="font-size:56px;margin-bottom:16px">🎉</div>
-          <h3 style="font-family:var(--font-display);font-size:22px;margin-bottom:8px">Message Sent!</h3>
-          <p style="color:var(--text-secondary)">We'll get back to you within 2 hours.</p>
+        <div id="formSuccess" class="form-success" hidden>
+          <div class="form-success-icon">✓</div>
+          <h3>Message Sent!</h3>
+          <p>We'll get back to you within 2 hours.</p>
         </div>
         <div id="contactForm">
           <div class="form-row">
             <div class="form-group">
-              <label class="form-label">Your Name *</label>
-              <input type="text" class="form-input" placeholder="John Doe" id="fname">
+              <label class="form-label" for="fname">Your Name *</label>
+              <input type="text" class="form-input" placeholder="John Doe" id="fname" autocomplete="name">
             </div>
             <div class="form-group">
-              <label class="form-label">Email Address *</label>
-              <input type="email" class="form-input" placeholder="john@company.com" id="femail">
+              <label class="form-label" for="femail">Email Address *</label>
+              <input type="email" class="form-input" placeholder="john@company.com" id="femail" autocomplete="email">
             </div>
           </div>
           <div class="form-group">
-            <label class="form-label">Phone / WhatsApp</label>
-            <input type="tel" class="form-input" placeholder="+91 6232161851" id="fphone">
+            <label class="form-label" for="fphone">Phone / WhatsApp</label>
+            <input type="tel" class="form-input" placeholder="+91 6232161851" id="fphone" autocomplete="tel">
           </div>
           <div class="form-group">
-            <label class="form-label">Service Interested In</label>
-            <select class="form-input" style="cursor:pointer" id="fservice">
-              <option value="" style="background:#050b14">Select a service...</option>
-              <option style="background:#050b14">Website Development</option>
-              <option style="background:#050b14">Digital Marketing</option>
-              <option style="background:#050b14">AI Solutions</option>
-              <option style="background:#050b14">Chatbot Development</option>
-              <option style="background:#050b14">Business Automation</option>
-              <option style="background:#050b14">Full Growth Package</option>
+            <label class="form-label" for="fservice">Service Interested In</label>
+            <select class="form-input" id="fservice">
+              <option value="">Select a service...</option>
+              <option>Website Development</option>
+              <option>Digital Marketing</option>
+              <option>AI Automation</option>
+              <option>AI Chatbots</option>
+              <option>E-commerce</option>
+              <option>WhatsApp Automation</option>
+              <option>Full Growth Package</option>
             </select>
           </div>
           <div class="form-group">
-            <label class="form-label">Send via</label>
-            <div style="display:flex;gap:14px;flex-wrap:wrap">
-              <label style="display:flex;align-items:center;gap:8px;color:var(--text-secondary);font-size:14px;cursor:pointer">
-                <input type="radio" name="sendVia" value="whatsapp" checked>
-                WhatsApp
-              </label>
-              <label style="display:flex;align-items:center;gap:8px;color:var(--text-secondary);font-size:14px;cursor:pointer">
-                <input type="radio" name="sendVia" value="email">
-                Email
-              </label>
+            <span class="form-label">Send via</span>
+            <div class="send-via">
+              <label><input type="radio" name="sendVia" value="whatsapp" checked> WhatsApp</label>
+              <label><input type="radio" name="sendVia" value="email"> Email</label>
             </div>
           </div>
           <div class="form-group">
-            <label class="form-label">Tell us about your project *</label>
+            <label class="form-label" for="fmsg">Tell us about your project *</label>
             <textarea class="form-textarea" placeholder="Describe your business, goals, and what you're looking to achieve..." id="fmsg"></textarea>
           </div>
-          <button class="btn-primary btn-full" onclick="handleSubmit()">
-            Send Message &amp; Get Free Strategy <span class="btn-arrow">→</span>
+          <button type="button" class="btn-primary btn-full" onclick="handleSubmit()">
+            Send Message <span class="btn-arrow">→</span>
           </button>
-          <p style="font-size:12px;color:var(--text-muted);text-align:center;margin-top:12px">No spam, ever. We respond within 2 hours.</p>
+          <p class="form-note">No spam, ever. We respond within 2 hours.</p>
         </div>
       </div>
     </div>
@@ -668,123 +601,87 @@
 <!-- ─── FOOTER ─── -->
 <footer class="footer">
   <div class="container">
-    <div class="footer-grid">
-      <div>
-        <a href="#" class="footer-logo">
-          <img src="vraizentech-logo.png" alt="VraizenTech" class="footer-logo-img">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#home" class="footer-logo">
+          <img src="logo-light.png" alt="" class="logo-mark" width="36" height="27">
+          <span class="logo-word">Vraizen<span>Tech</span></span>
         </a>
-        <p class="footer-brand-desc">AI-powered web development, digital marketing, and automation solutions that drive real business growth.</p>
+        <p class="footer-tagline">AI-Powered Digital Growth Agency</p>
         <div class="footer-socials">
-          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
-          <a href="#" class="social-link" aria-label="Twitter">𝕏</a>
-          <a href="#" class="social-link" aria-label="Instagram">📷</a>
-          <a href="#" class="social-link" aria-label="YouTube">▶</a>
+          <a href="#" class="social-link" aria-label="Instagram">Instagram</a>
+          <a href="#" class="social-link" aria-label="LinkedIn">LinkedIn</a>
+          <a href="#" class="social-link" aria-label="Facebook">Facebook</a>
+          <a href="#" class="social-link" aria-label="YouTube">YouTube</a>
         </div>
       </div>
-      <div>
-        <div class="footer-title">Services</div>
-        <ul class="footer-links">
-          <li><a href="#services">Website Development</a></li>
-          <li><a href="#services">Digital Marketing</a></li>
-          <li><a href="#services">AI Solutions</a></li>
-          <li><a href="#services">Chatbot Development</a></li>
-          <li><a href="#services">Business Automation</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-title">Company</div>
-        <ul class="footer-links">
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#contact">Free Consultation</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-title">Contact</div>
-        <ul class="footer-links">
-          <li><a href="mailto:technexus@gmail.com">technexus@gmail.com</a></li>
-          <li><a href="https://wa.me/916232161851">+91 6232161851</a></li>
-          <li><a href="#">Indore, India</a></li>
-          <li><a href="#">Remote Worldwide</a></li>
-        </ul>
-        <div style="margin-top:20px">
-          <a href="https://wa.me/916232161851" target="_blank" class="whatsapp-btn" style="padding:10px 16px;font-size:13px;">
-            💬 WhatsApp Now
-          </a>
+      <div class="footer-links-wrap">
+        <div>
+          <div class="footer-title">Explore</div>
+          <ul class="footer-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-title">Contact</div>
+          <ul class="footer-links">
+            <li><a href="mailto:technexus@gmail.com">technexus@gmail.com</a></li>
+            <li><a href="https://wa.me/916232161851">+91 6232161851</a></li>
+            <li><span>Indore, India</span></li>
+            <li><span>Remote Worldwide</span></li>
+          </ul>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <div class="footer-copy">© 2025 <span>VraizenTech</span>. All rights reserved. Built with ⚡ AI.</div>
-      <div class="footer-legal">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Sitemap</a>
-      </div>
+      <div class="footer-copy">© 2026 Vraizen Tech. All rights reserved.</div>
     </div>
   </div>
 </footer>
 
 <script>
-/* ── Perf helpers ── */
 const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
-const isFinePointer = window.matchMedia?.('(pointer: fine)')?.matches;
 
-/* ── Custom Cursor (desktop/fine pointer only) ── */
-const cursor = document.getElementById('cursor');
-const follower = document.getElementById('cursorFollower');
-if (isFinePointer && !prefersReducedMotion && cursor && follower) {
-  let mx = 0, my = 0, fx = 0, fy = 0;
-  let rafId = null;
-  const onMove = (e) => { mx = e.clientX; my = e.clientY; };
-  document.addEventListener('mousemove', onMove, { passive: true });
-  const animateCursor = () => {
-    cursor.style.left = mx + 'px';
-    cursor.style.top = my + 'px';
-    fx += (mx - fx) * 0.12;
-    fy += (my - fy) * 0.12;
-    follower.style.left = fx + 'px';
-    follower.style.top = fy + 'px';
-    rafId = requestAnimationFrame(animateCursor);
-  };
-  rafId = requestAnimationFrame(animateCursor);
-  window.addEventListener('blur', () => { if (rafId) cancelAnimationFrame(rafId); rafId = null; }, { passive: true });
-  window.addEventListener('focus', () => { if (!rafId) rafId = requestAnimationFrame(animateCursor); }, { passive: true });
-}
-
-/* ── Navbar (passive + rAF throttle) ── */
+/* Navbar */
 const navbar = document.getElementById('navbar');
 let navTicking = false;
 const updateNavbar = () => {
   navTicking = false;
   if (!navbar) return;
-  navbar.classList.toggle('scrolled', window.scrollY > 50);
+  navbar.classList.toggle('scrolled', window.scrollY > 20);
 };
 window.addEventListener('scroll', () => {
   if (navTicking) return;
   navTicking = true;
   requestAnimationFrame(updateNavbar);
 }, { passive: true });
+updateNavbar();
 
-/* ── Mobile Menu ── */
+/* Mobile Menu */
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  mobileMenu.classList.toggle('open');
-  document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+hamburger?.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('open');
+  hamburger.classList.toggle('open', open);
+  hamburger.setAttribute('aria-expanded', String(open));
+  mobileMenu.setAttribute('aria-hidden', String(!open));
+  document.body.style.overflow = open ? 'hidden' : '';
 });
 document.querySelectorAll('.mobile-link, .mobile-menu .nav-cta').forEach(link => {
   link.addEventListener('click', () => {
     hamburger.classList.remove('open');
     mobileMenu.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    mobileMenu.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
   });
 });
 
-/* ── Scroll Reveal (disable on reduced motion) ── */
+/* Scroll Reveal */
 if (!prefersReducedMotion) {
   const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
   const observer = new IntersectionObserver(entries => {
@@ -797,91 +694,91 @@ if (!prefersReducedMotion) {
   document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => el.classList.add('visible'));
 }
 
-/* ── Terminal Typewriter (slow a bit on reduced motion) ── */
-const commands = [
-  { cmd: 'deploy --ai-chatbot', out: '✓ Bot deployed successfully' },
-  { cmd: 'run seo-audit', out: '✓ 47 issues fixed, rank: ↑12' },
-  { cmd: 'automate --crm-leads', out: '✓ 247 leads routed & qualified' },
-  { cmd: 'scale --google-ads', out: '✓ ROAS improved to 6.2x' },
-  { cmd: 'build --website prod', out: '✓ Deployed in 2.3s, 99 score' },
-];
-let cmdIdx = 0, charIdx = 0, phase = 'typing';
-const cmdEl = document.getElementById('terminalCmd');
-const outEl = document.getElementById('terminalOut');
-function typeLoop() {
-  const curr = commands[cmdIdx];
-  if (phase === 'typing') {
-    if (charIdx <= curr.cmd.length) {
-      if (cmdEl) cmdEl.textContent = curr.cmd.slice(0, charIdx);
-      charIdx++;
-      setTimeout(typeLoop, prefersReducedMotion ? 90 : 60);
-    } else {
-      phase = 'showing';
-      if (outEl) outEl.textContent = curr.out;
-      setTimeout(typeLoop, prefersReducedMotion ? 2400 : 1800);
-    }
-  } else if (phase === 'showing') {
-    phase = 'erasing';
-    charIdx = curr.cmd.length;
-    if (outEl) outEl.textContent = '';
-    setTimeout(typeLoop, 100);
-  } else if (phase === 'erasing') {
-    if (charIdx > 0) {
-      if (cmdEl) cmdEl.textContent = curr.cmd.slice(0, charIdx - 1);
-      charIdx--;
-      setTimeout(typeLoop, prefersReducedMotion ? 45 : 30);
-    } else {
-      cmdIdx = (cmdIdx + 1) % commands.length;
-      phase = 'typing';
-      charIdx = 0;
-      setTimeout(typeLoop, 400);
-    }
-  }
+/* Flow system animation */
+const flowSystem = document.getElementById('flowSystem');
+if (flowSystem) {
+  const flowObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        flowSystem.classList.add('active');
+        flowObs.unobserve(flowSystem);
+      }
+    });
+  }, { threshold: 0.35 });
+  flowObs.observe(flowSystem);
+  if (prefersReducedMotion) flowSystem.classList.add('active');
 }
-typeLoop();
 
-/* ── Stat Counter ── */
-function animateCount(el, target, suffix) {
+/* Counters */
+function animateCount(el, target, suffix = '', decimals = 0) {
+  if (prefersReducedMotion) {
+    el.textContent = (decimals ? target.toFixed(decimals) : target) + suffix;
+    return;
+  }
   let start = 0;
-  const duration = 2000;
+  const duration = 1600;
   const step = (timestamp) => {
     if (!start) start = timestamp;
     const progress = Math.min((timestamp - start) / duration, 1);
-    const val = Math.floor(progress * target);
-    el.textContent = val + suffix;
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const val = target * eased;
+    el.textContent = (decimals ? val.toFixed(decimals) : Math.floor(val)).toLocaleString() + suffix;
     if (progress < 1) requestAnimationFrame(step);
-    else el.textContent = target + suffix;
+    else el.textContent = (decimals ? target.toFixed(decimals) : target).toLocaleString() + suffix;
   };
   requestAnimationFrame(step);
 }
-const statEls = document.querySelectorAll('.hero-stat-num');
-const statObserver = new IntersectionObserver(entries => {
+
+const countObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    const el = entry.target;
+    const target = parseFloat(el.dataset.count);
+    if (Number.isNaN(target)) return;
+    const suffix = el.dataset.suffix || '';
+    const decimals = parseInt(el.dataset.decimals || '0', 10);
+    animateCount(el, target, suffix, decimals);
+    countObserver.unobserve(el);
+  });
+}, { threshold: 0.4 });
+
+document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el));
+
+/* Chart draw on view */
+document.querySelectorAll('.animate-draw').forEach(path => {
+  try {
+    const len = path.getTotalLength();
+    path.style.strokeDasharray = String(len);
+    path.style.strokeDashoffset = String(len);
+  } catch (_) {}
+});
+const chartObs = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      const el = entry.target;
-      const target = parseInt(el.dataset.count);
-      const suffix = el.dataset.count === '98' ? '%' : '+';
-      animateCount(el, target, suffix);
-      statObserver.unobserve(el);
+      entry.target.querySelectorAll('.animate-draw').forEach(p => {
+        p.style.transition = prefersReducedMotion ? 'none' : 'stroke-dashoffset 1.6s ease';
+        p.style.strokeDashoffset = '0';
+      });
+      chartObs.unobserve(entry.target);
     }
   });
-}, { threshold: 0.5 });
-statEls.forEach(el => statObserver.observe(el));
+}, { threshold: 0.3 });
+document.querySelectorAll('.analytics-board, .dash-card').forEach(el => chartObs.observe(el));
 
-/* ── Form Submit ── */
+/* Form Submit */
 function handleSubmit() {
-  const name = document.getElementById('fname')?.value;
-  const email = document.getElementById('femail')?.value;
-  const phone = document.getElementById('fphone')?.value;
+  const name = document.getElementById('fname')?.value?.trim();
+  const email = document.getElementById('femail')?.value?.trim();
+  const phone = document.getElementById('fphone')?.value?.trim();
   const service = document.getElementById('fservice')?.value;
-  const msg = document.getElementById('fmsg')?.value;
+  const msg = document.getElementById('fmsg')?.value?.trim();
   if (!name || !email || !msg) {
     alert('Please fill in the required fields (Name, Email, Message).');
     return;
   }
   const sendVia = document.querySelector('input[name="sendVia"]:checked')?.value || 'whatsapp';
   const lines = [
-    'New Free Consultation Request', '',
+    'New Project Inquiry — Vraizen Tech', '',
     `Name: ${name}`, `Email: ${email}`,
     phone ? `Phone: ${phone}` : null,
     service ? `Service: ${service}` : null,
@@ -889,26 +786,27 @@ function handleSubmit() {
   ].filter(Boolean);
   const text = lines.join('\n');
   if (sendVia === 'email') {
-    const subject = encodeURIComponent('Free Consultation Request - VraizenTech');
+    const subject = encodeURIComponent('Project Inquiry - Vraizen Tech');
     const body = encodeURIComponent(text);
-    window.open(`mailto:technexus@gmail.com?subject=${subject}&body=${body}`, '_blank');
+    window.location.href = `mailto:technexus@gmail.com?subject=${subject}&body=${body}`;
   } else {
     window.open(`https://wa.me/916232161851?text=${encodeURIComponent(text)}`, '_blank');
   }
-  document.getElementById('contactForm').style.display = 'none';
-  document.getElementById('formSuccess').style.display = 'block';
+  document.getElementById('contactForm').hidden = true;
+  document.getElementById('formSuccess').hidden = false;
 }
 
-/* ── Smooth Scroll (respect reduced motion) ── */
+/* Smooth Scroll */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     const href = this.getAttribute('href');
-    const target = href ? document.querySelector(href) : null;
+    if (!href || href === '#') return;
+    const target = document.querySelector(href);
     if (target) {
       e.preventDefault();
       target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
     }
-  }, { passive: false });
+  });
 });
 </script>
 </body>
