@@ -14,9 +14,11 @@ import { initScrollGraph } from './scrollGraph.js';
 import { initSystemMap } from './systemMap.js';
 import { initCaseStudies } from './caseStudy.js';
 import { initPlatformOrbit } from './platformOrbit.js';
+import { initBrandColors } from './brandColors.js';
 
 onReady(() => {
   initLoader();
+  initBrandColors();
   initCursorFollower();
   initMagnetic();
   initParticleField(document.querySelector('.hero'));

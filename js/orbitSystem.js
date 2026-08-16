@@ -1,33 +1,35 @@
 import { canCinema, isMobile, prefersReducedMotion, whenVisible, pointerNorm } from './core.js';
 
 /**
- * Digital universe / platform orbital ecosystem
+ * Clean digital universe orbit — single ring, no duplicates
  */
 export function initOrbitSystem(root) {
   if (!root) return;
 
-  const orbit = root.querySelector('.orbit-ring');
-  const nodes = [...root.querySelectorAll('.orbit-node')];
+  const wrap = root.querySelector('.orbit-wrap') || root;
+  const orbit = wrap.querySelector('.orbit-ring');
+  const nodes = [...wrap.querySelectorAll('.orbit-ring > .orbit-node')];
   if (!orbit || !nodes.length) return;
 
-  // Mobile: fall back to marquee (handled in CSS via .orbit-mobile)
   if (isMobile() || prefersReducedMotion) {
-    root.classList.add('orbit-mobile');
+    wrap.classList.add('orbit-mobile');
     return;
   }
 
-  let angle = 0;
+  wrap.classList.add('orbit-ready');
+
+  let angle = -Math.PI / 2;
   let mx = 0;
   let my = 0;
-  let running = true;
+  let running = false;
   let raf = 0;
 
-  root.addEventListener(
+  wrap.addEventListener(
     'mousemove',
     (e) => {
-      const { x, y } = pointerNorm(e, root);
-      mx = (x - 0.5) * 18;
-      my = (y - 0.5) * 12;
+      const { x, y } = pointerNorm(e, wrap);
+      mx = (x - 0.5) * 12;
+      my = (y - 0.5) * 8;
     },
     { passive: true }
   );
@@ -36,30 +38,30 @@ export function initOrbitSystem(root) {
     const n = nodes.length;
     nodes.forEach((node, i) => {
       const a = angle + (i / n) * Math.PI * 2;
-      const rx = 38 + Math.sin(a * 2) * 2;
-      const ry = 34;
+      const rx = 40;
+      const ry = 36;
       const x = 50 + Math.cos(a) * rx;
       const y = 50 + Math.sin(a) * ry;
       const depth = (Math.sin(a) + 1) / 2;
       node.style.left = `${x}%`;
       node.style.top = `${y}%`;
-      node.style.transform = `translate(-50%, -50%) scale(${0.85 + depth * 0.25}) translateZ(0)`;
-      node.style.opacity = String(0.55 + depth * 0.45);
-      node.style.zIndex = String(Math.round(depth * 10));
-      node.classList.toggle('near', depth > 0.72);
+      node.style.transform = `translate(-50%, -50%) scale(${0.9 + depth * 0.15})`;
+      node.style.opacity = '1';
+      node.style.zIndex = String(Math.round(2 + depth * 8));
+      node.classList.toggle('near', depth > 0.7);
     });
-    orbit.style.transform = `perspective(900px) rotateX(${12 + my * 0.15}deg) rotateY(${mx * 0.2}deg)`;
+    orbit.style.transform = `perspective(900px) rotateX(${8 + my * 0.1}deg) rotateY(${mx * 0.15}deg)`;
   };
 
   const tick = () => {
     if (!running) return;
-    angle += 0.0022;
+    angle += 0.002;
     place();
     raf = requestAnimationFrame(tick);
   };
 
   whenVisible(
-    root,
+    wrap,
     () => {
       running = true;
       if (!raf) raf = requestAnimationFrame(tick);
@@ -73,15 +75,6 @@ export function initOrbitSystem(root) {
         raf = 0;
       },
     }
-  );
-
-  // Scroll gently advances rotation
-  window.addEventListener(
-    'scroll',
-    () => {
-      angle += 0.0008;
-    },
-    { passive: true }
   );
 
   place();

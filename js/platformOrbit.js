@@ -1,19 +1,8 @@
 import { canCinema, isMobile, prefersReducedMotion, whenVisible } from './core.js';
-
-const PLATFORMS = [
-  { name: 'Google Ads', tip: 'Performance Marketing', brand: 'google' },
-  { name: 'Meta', tip: 'Social Acquisition', brand: 'meta' },
-  { name: 'Instagram', tip: 'Brand & Reach', brand: 'instagram' },
-  { name: 'WhatsApp', tip: 'Conversational Sales', brand: 'whatsapp' },
-  { name: 'LinkedIn', tip: 'B2B Demand', brand: 'linkedin' },
-  { name: 'YouTube', tip: 'Video Attention', brand: 'youtube' },
-  { name: 'Shopify', tip: 'Commerce', brand: 'shopify' },
-  { name: 'Analytics', tip: 'Measurement', brand: 'analytics' },
-  { name: 'WordPress', tip: 'Content Sites', brand: 'wordpress' },
-];
+import { PLATFORM_LIST, brandIcon } from './brandLogos.js';
 
 /**
- * Desktop orbital platform ecosystem around Vraizen
+ * Desktop orbital platform ecosystem with colorful brand logos
  */
 export function initPlatformOrbit(root) {
   if (!root) return;
@@ -25,16 +14,16 @@ export function initPlatformOrbit(root) {
     return;
   }
 
-  orbit.innerHTML = PLATFORMS.map(
+  orbit.innerHTML = PLATFORM_LIST.map(
     (p, i) => `
     <div class="pe-logo" data-brand="${p.brand}" data-i="${i}" style="--i:${i}">
-      <span>${p.name.split(' ')[0]}</span>
+      <span class="pe-icon">${brandIcon(p.brand)}</span>
       <span class="pe-tip"><strong>${p.name}</strong><br>${p.tip}</span>
     </div>`
   ).join('');
 
   const logos = [...orbit.querySelectorAll('.pe-logo')];
-  let angle = 0;
+  let angle = -Math.PI / 2;
   let mx = 0;
   let my = 0;
   let running = false;
@@ -44,8 +33,8 @@ export function initPlatformOrbit(root) {
     'mousemove',
     (e) => {
       const r = root.getBoundingClientRect();
-      mx = ((e.clientX - r.left) / r.width - 0.5) * 16;
-      my = ((e.clientY - r.top) / r.height - 0.5) * 10;
+      mx = ((e.clientX - r.left) / r.width - 0.5) * 10;
+      my = ((e.clientY - r.top) / r.height - 0.5) * 6;
     },
     { passive: true }
   );
@@ -54,23 +43,23 @@ export function initPlatformOrbit(root) {
     const n = logos.length;
     logos.forEach((logo, i) => {
       const a = angle + (i / n) * Math.PI * 2;
-      const rx = 42;
-      const ry = 34;
-      const x = 50 + Math.cos(a) * rx + mx * 0.15;
-      const y = 50 + Math.sin(a) * ry + my * 0.15;
+      const rx = 40;
+      const ry = 36;
+      const x = 50 + Math.cos(a) * rx + mx * 0.1;
+      const y = 50 + Math.sin(a) * ry + my * 0.1;
       const depth = (Math.sin(a) + 1) / 2;
       logo.style.left = `${x}%`;
       logo.style.top = `${y}%`;
-      logo.style.transform = `translate(-50%, -50%) scale(${0.88 + depth * 0.22})`;
-      logo.style.opacity = String(0.55 + depth * 0.45);
-      logo.style.zIndex = String(Math.round(1 + depth * 10));
-      logo.classList.toggle('near', depth > 0.7);
+      logo.style.transform = `translate(-50%, -50%) scale(${0.92 + depth * 0.14})`;
+      logo.style.opacity = '1';
+      logo.style.zIndex = String(Math.round(2 + depth * 8));
+      logo.classList.toggle('near', depth > 0.65);
     });
   };
 
   const tick = () => {
     if (!running) return;
-    angle += canCinema() ? 0.003 : 0;
+    angle += canCinema() ? 0.0025 : 0;
     place();
     raf = requestAnimationFrame(tick);
   };

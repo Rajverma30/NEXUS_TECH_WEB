@@ -601,22 +601,30 @@ ul { list-style: none; }
   font-weight: 700;
 }
 
-/* Default: muted single-color icons */
-.platform-logo .g-blue,
-.platform-logo .g-green,
-.platform-logo .g-yellow,
-.platform-logo .g-red,
-.platform-logo .ga-yellow,
-.platform-logo .ga-orange,
-.platform-logo .ga-blue,
-.platform-logo .yt-bg,
-.platform-logo .ig-fill {
-  fill: currentColor;
-}
+/* Default: colorful brand icons (not muted) */
+.platform-logo .g-blue { fill: #4285F4; }
+.platform-logo .g-green { fill: #34A853; }
+.platform-logo .g-yellow { fill: #FBBC05; }
+.platform-logo .g-red { fill: #EA4335; }
+.platform-logo .ga-yellow { fill: #F9AB00; }
+.platform-logo .ga-orange { fill: #E37400; }
+.platform-logo .ga-blue { fill: #E37400; }
+.platform-logo .yt-bg { fill: #FF0000; }
+.platform-logo .ig-fill { fill: url(#igGradA); }
 .platform-logo .yt-play {
   fill: #fff;
-  opacity: 0.85;
+  opacity: 1;
 }
+.platform-logo[data-brand="meta"] { color: #0668E1; }
+.platform-logo[data-brand="facebook"] { color: #1877F2; }
+.platform-logo[data-brand="instagram"] { color: #E4405F; }
+.platform-logo[data-brand="whatsapp"] { color: #25D366; }
+.platform-logo[data-brand="linkedin"] { color: #0A66C2; }
+.platform-logo[data-brand="shopify"] { color: #95BF47; }
+.platform-logo[data-brand="wordpress"] { color: #21759B; }
+.platform-logo[data-brand="gbp"] { color: #EA4335; }
+.platform-logo[data-brand="youtube"] { color: #FF0000; }
+.platform-logo[data-brand="analytics"] { color: #E37400; }
 
 .platform-logo:hover {
   transform: translateY(-3px) scale(1.04);

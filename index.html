@@ -128,25 +128,26 @@
             </circle>
             <!-- Nodes -->
             <g class="ge-node" transform="translate(60,36)">
-              <circle r="22"/><text y="4">ADS</text>
+              <circle r="24"/><text text-anchor="middle" dominant-baseline="central" x="0" y="0">ADS</text>
             </g>
             <g class="ge-node" transform="translate(180,36)">
-              <circle r="22"/><text y="4">VISIT</text>
+              <circle r="24"/><text text-anchor="middle" dominant-baseline="central" x="0" y="0">VISIT</text>
             </g>
             <g class="ge-node" transform="translate(300,36)">
-              <circle r="22"/><text y="4">WEB</text>
+              <circle r="24"/><text text-anchor="middle" dominant-baseline="central" x="0" y="0">WEB</text>
             </g>
             <g class="ge-node core" transform="translate(180,110)">
-              <circle r="28"/><text y="4">VRAIZEN AI</text>
+              <circle r="32"/><text text-anchor="middle" dominant-baseline="central" x="0" y="-4" class="ge-core-title">VRAIZEN</text>
+              <text text-anchor="middle" dominant-baseline="central" x="0" y="10" class="ge-core-sub">AI</text>
             </g>
             <g class="ge-node" transform="translate(90,175)">
-              <circle r="22"/><text y="4">LEADS</text>
+              <circle r="24"/><text text-anchor="middle" dominant-baseline="central" x="0" y="0">LEADS</text>
             </g>
             <g class="ge-node" transform="translate(270,175)">
-              <circle r="22"/><text y="4">DATA</text>
+              <circle r="24"/><text text-anchor="middle" dominant-baseline="central" x="0" y="0">DATA</text>
             </g>
             <g class="ge-node" transform="translate(180,220)">
-              <circle r="24"/><text y="4">GROWTH</text>
+              <circle r="26"/><text text-anchor="middle" dominant-baseline="central" x="0" y="0">GROWTH</text>
             </g>
           </svg>
           <div class="ge-metrics">
@@ -407,7 +408,7 @@
     </div>
     <div class="orbit-wrap">
       <div class="orbit-core">VRAIZEN</div>
-      <div class="orbit-ring">
+      <div class="orbit-ring" aria-hidden="true">
         <div class="orbit-node">AI</div>
         <div class="orbit-node">Web</div>
         <div class="orbit-node">Ads</div>
@@ -417,21 +418,9 @@
         <div class="orbit-node">WhatsApp</div>
         <div class="orbit-node">CRM</div>
       </div>
-      <div class="orbit-fallback logo-marquee" aria-hidden="true">
-        <div class="logo-marquee-track" style="gap:12px">
-          <span class="orbit-node" style="position:static">AI</span>
-          <span class="orbit-node" style="position:static">Web</span>
-          <span class="orbit-node" style="position:static">Ads</span>
-          <span class="orbit-node" style="position:static">SEO</span>
-          <span class="orbit-node" style="position:static">Automation</span>
-          <span class="orbit-node" style="position:static">Analytics</span>
-          <span class="orbit-node" style="position:static">WhatsApp</span>
-          <span class="orbit-node" style="position:static">CRM</span>
-          <span class="orbit-node" style="position:static">AI</span>
-          <span class="orbit-node" style="position:static">Web</span>
-          <span class="orbit-node" style="position:static">Ads</span>
-          <span class="orbit-node" style="position:static">SEO</span>
-        </div>
+      <div class="orbit-fallback" aria-hidden="true">
+        <span>AI</span><span>Web</span><span>Ads</span><span>SEO</span>
+        <span>Automation</span><span>Analytics</span><span>WhatsApp</span><span>CRM</span>
       </div>
     </div>
   </div>
@@ -859,25 +848,27 @@
 <!-- System Map Overlay -->
 <div class="system-map" id="systemMap" role="dialog" aria-modal="true" aria-label="Vraizen system map" hidden>
   <button type="button" class="sm-close" aria-label="Close system map">×</button>
-  <div class="sm-tree">
-    <div class="sm-node core">VRAIZEN</div>
-    <div class="sm-line"></div>
-    <div class="sm-row">
-      <div class="sm-node">WEBSITE</div>
-      <div class="sm-node">AI</div>
-      <div class="sm-node">ADS</div>
+  <div class="sm-panel">
+    <div class="sm-tree">
+      <div class="sm-node core">VRAIZEN</div>
+      <div class="sm-line" aria-hidden="true"></div>
+      <div class="sm-row">
+        <div class="sm-node brand" data-brand="web">WEBSITE</div>
+        <div class="sm-node brand" data-brand="ai">AI</div>
+        <div class="sm-node brand" data-brand="google">ADS</div>
+      </div>
+      <div class="sm-line" aria-hidden="true"></div>
+      <div class="sm-node">LEADS</div>
+      <div class="sm-line" aria-hidden="true"></div>
+      <div class="sm-node brand" data-brand="whatsapp">WHATSAPP</div>
+      <div class="sm-line" aria-hidden="true"></div>
+      <div class="sm-node">CUSTOMERS</div>
+      <div class="sm-line" aria-hidden="true"></div>
+      <div class="sm-node core">GROWTH</div>
+      <div class="sm-packet" aria-hidden="true"></div>
     </div>
-    <div class="sm-line"></div>
-    <div class="sm-node">LEADS</div>
-    <div class="sm-line"></div>
-    <div class="sm-node">WHATSAPP</div>
-    <div class="sm-line"></div>
-    <div class="sm-node">CUSTOMERS</div>
-    <div class="sm-line"></div>
-    <div class="sm-node core">GROWTH</div>
-    <div class="sm-packet" aria-hidden="true"></div>
+    <div class="sm-status">SYSTEM ONLINE</div>
   </div>
-  <div class="sm-status">SYSTEM ONLINE</div>
 </div>
 
 <!-- ─── FOOTER ─── -->

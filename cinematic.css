@@ -2587,3 +2587,370 @@ html.site-ready .growth-engine {
 .system-map:not([hidden]) {
   display: flex;
 }
+
+/* ════════════════════════════════════════════════
+   ALIGNMENT + LOGO FIXES (Aug 2026)
+   ════════════════════════════════════════════════ */
+
+/* Growth Engine — centered SVG labels */
+.ge-node text {
+  text-anchor: middle !important;
+  dominant-baseline: central;
+  fill: #E2E8F0 !important;
+  font-size: 9px !important;
+  font-weight: 700 !important;
+  font-family: var(--font), system-ui, sans-serif;
+  letter-spacing: 0.04em;
+}
+.ge-node.core .ge-core-title {
+  font-size: 8px !important;
+  fill: #fff !important;
+  letter-spacing: 0.08em;
+}
+.ge-node.core .ge-core-sub {
+  font-size: 10px !important;
+  fill: #fff !important;
+  font-weight: 800 !important;
+}
+
+/* Growth Engine metrics — stacked cleanly */
+.ge-metrics {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 10px !important;
+  align-items: stretch;
+}
+.ge-metric {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 4px !important;
+  padding: 12px !important;
+}
+.ge-metric label {
+  display: block;
+  font-size: 10px !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted) !important;
+  line-height: 1.2;
+}
+.ge-metric b {
+  display: block;
+  font-size: 18px !important;
+  line-height: 1.2;
+  font-weight: 800;
+  color: #fff !important;
+}
+
+/* Scroll growth markers — flex row, NOT absolute stack */
+.sg-markers {
+  position: relative !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 8px 10px !important;
+  width: min(900px, 100%) !important;
+  margin: 20px auto 0 !important;
+}
+.sg-marker {
+  position: static !important;
+  left: auto !important;
+  top: auto !important;
+  transform: none !important;
+  opacity: 0.35 !important;
+  padding: 8px 12px !important;
+  white-space: nowrap;
+}
+.sg-marker.on {
+  opacity: 1 !important;
+  transform: none !important;
+  color: #fff !important;
+  border-color: rgba(59, 130, 246, 0.5) !important;
+}
+.sg-chart-wrap {
+  position: relative;
+  width: min(900px, 100%);
+  margin: 0 auto;
+}
+
+/* Universe orbit — clean centered ring */
+.orbit-wrap {
+  position: relative !important;
+  width: min(560px, 100%) !important;
+  height: 480px !important;
+  margin: 24px auto 0 !important;
+  display: block !important;
+}
+.orbit-core {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 20 !important;
+  width: 110px !important;
+  height: 110px !important;
+  border-radius: 50% !important;
+  display: grid !important;
+  place-items: center !important;
+  margin: 0 !important;
+}
+.orbit-ring {
+  position: absolute !important;
+  inset: 0 !important;
+  transform-style: preserve-3d;
+}
+.orbit-ring > .orbit-node {
+  position: absolute !important;
+  margin: 0 !important;
+  white-space: nowrap;
+}
+.orbit-fallback {
+  display: none !important;
+}
+.orbit-wrap.orbit-mobile {
+  height: auto !important;
+  padding: 12px 0 24px;
+}
+.orbit-wrap.orbit-mobile .orbit-ring {
+  display: none !important;
+}
+.orbit-wrap.orbit-mobile .orbit-core {
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+  transform: none !important;
+  margin: 0 auto 20px !important;
+}
+.orbit-wrap.orbit-mobile .orbit-fallback {
+  display: flex !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.orbit-wrap.orbit-mobile .orbit-fallback span {
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+/* Platform ecosystem — logo tiles with colorful icons */
+.platform-ecosystem {
+  position: relative !important;
+  width: min(560px, 100%) !important;
+  height: 460px !important;
+  margin: 28px auto 8px !important;
+  aspect-ratio: auto !important;
+  display: block !important;
+}
+.pe-core {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 20 !important;
+  width: 108px !important;
+  height: 108px !important;
+  border-radius: 50% !important;
+  display: grid !important;
+  place-items: center !important;
+}
+.pe-orbit {
+  position: absolute !important;
+  inset: 0 !important;
+}
+.pe-logo {
+  position: absolute !important;
+  width: 64px !important;
+  height: 64px !important;
+  margin: 0 !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  border-radius: 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: rgba(12, 16, 28, 0.95) !important;
+  border: 1px solid var(--border) !important;
+  padding: 0 !important;
+}
+.pe-logo .pe-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+.pe-logo .pe-icon svg {
+  width: 28px !important;
+  height: 28px !important;
+  display: block;
+}
+.pe-logo:nth-child(n) {
+  /* kill static nth-child layout from earlier CSS */
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+}
+.pe-logo.near,
+.pe-logo:hover {
+  border-color: rgba(139, 92, 246, 0.55) !important;
+  box-shadow: 0 0 24px rgba(139, 92, 246, 0.28) !important;
+  z-index: 30 !important;
+}
+.pe-tip {
+  bottom: calc(100% + 10px) !important;
+  top: auto !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 40;
+}
+.pe-logo:hover .pe-tip {
+  opacity: 1 !important;
+}
+.pe-marquee {
+  display: none !important;
+}
+@media (max-width: 900px) {
+  .platform-ecosystem {
+    height: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    overflow: hidden;
+  }
+  .pe-core, .pe-orbit { display: none !important; }
+  .pe-marquee { display: block !important; }
+}
+
+/* Always-colorful marquee / platform logos */
+.platform-logo.brand-color,
+.platform-logo {
+  color: var(--text) !important;
+}
+.platform-logo .platform-icon {
+  background: rgba(255,255,255,0.04) !important;
+}
+.platform-logo .g-blue { fill: #4285F4 !important; }
+.platform-logo .g-green { fill: #34A853 !important; }
+.platform-logo .g-yellow { fill: #FBBC05 !important; }
+.platform-logo .g-red { fill: #EA4335 !important; }
+.platform-logo[data-brand="meta"] .platform-icon svg path { fill: #0668E1 !important; }
+.platform-logo[data-brand="facebook"] .platform-icon svg path { fill: #1877F2 !important; }
+.platform-logo[data-brand="instagram"] .ig-fill { fill: url(#igGradA) !important; }
+.platform-logo[data-brand="youtube"] .yt-bg { fill: #FF0000 !important; }
+.platform-logo[data-brand="youtube"] .yt-play { fill: #fff !important; opacity: 1 !important; }
+.platform-logo[data-brand="whatsapp"] .platform-icon svg path { fill: #25D366 !important; }
+.platform-logo[data-brand="linkedin"] .platform-icon svg path { fill: #0A66C2 !important; }
+.platform-logo[data-brand="analytics"] .ga-yellow { fill: #F9AB00 !important; }
+.platform-logo[data-brand="analytics"] .ga-orange { fill: #E37400 !important; }
+.platform-logo[data-brand="analytics"] .ga-blue { fill: #E37400 !important; }
+.platform-logo[data-brand="shopify"] .platform-icon svg path { fill: #95BF47 !important; }
+.platform-logo[data-brand="wordpress"] .platform-icon svg path { fill: #21759B !important; }
+.platform-logo[data-brand="gbp"] .platform-icon svg path { fill: #EA4335 !important; }
+
+/* System map — vertical flex tree (no absolute pile-up) */
+.system-map .sm-panel {
+  position: relative;
+  width: min(640px, 100%);
+  padding: 36px 24px 28px;
+  border-radius: 24px;
+  background:
+    radial-gradient(ellipse 50% 50% at 50% 40%, rgba(59,130,246,0.1), transparent 70%),
+    rgba(12, 16, 28, 0.96);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+}
+.system-map .sm-tree {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 8px !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+.system-map .sm-node {
+  position: static !important;
+  left: auto !important;
+  top: auto !important;
+  transform: none !important;
+  opacity: 0;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px;
+  padding: 12px 18px !important;
+  border-radius: 12px !important;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+.system-map.mapping .sm-node,
+.system-map.online .sm-node {
+  opacity: 1 !important;
+  transform: none !important;
+}
+.system-map .sm-node.core {
+  background: var(--gradient) !important;
+  border: none !important;
+  color: #fff !important;
+  box-shadow: 0 0 32px rgba(139,92,246,0.35);
+}
+.system-map .sm-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 12px !important;
+  justify-content: center !important;
+  width: 100%;
+}
+.system-map .sm-line {
+  width: 2px !important;
+  height: 18px !important;
+  background: var(--gradient) !important;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+.system-map .sm-brand-icon {
+  display: inline-flex;
+  line-height: 0;
+}
+.system-map .sm-brand-icon svg {
+  width: 18px;
+  height: 18px;
+}
+.system-map .sm-packet {
+  position: absolute !important;
+  left: 50% !important;
+  top: 8% !important;
+  margin-left: -5px;
+}
+.system-map .sm-status {
+  position: static !important;
+  transform: none !important;
+  margin: 22px auto 0 !important;
+  text-align: center;
+  opacity: 0;
+}
+.system-map .sm-status.show {
+  opacity: 1 !important;
+}
+
+/* Kill conflicting absolute nth positions from old system-map CSS */
+.sm-node:nth-of-type(n) {
+  left: auto;
+  top: auto;
+}
