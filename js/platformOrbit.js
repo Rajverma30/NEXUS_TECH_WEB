@@ -2,8 +2,7 @@ import { isMobile, prefersReducedMotion } from './core.js';
 import { PLATFORM_LIST, brandIcon } from './brandLogos.js';
 
 /**
- * Platform ecosystem — CSS-driven ring so ALL logos stay visible.
- * JS only fills logos + optional slow spin.
+ * Platform ecosystem — logos on a CSS ring; VRAIZEN locked to true center.
  */
 export function initPlatformOrbit(root) {
   if (!root) return;
@@ -12,6 +11,7 @@ export function initPlatformOrbit(root) {
 
   const count = PLATFORM_LIST.length;
   root.style.setProperty('--pe-count', String(count));
+  root.classList.add('pe-ready');
 
   orbit.innerHTML = PLATFORM_LIST.map(
     (p, i) => `
@@ -23,8 +23,5 @@ export function initPlatformOrbit(root) {
 
   if (isMobile() || prefersReducedMotion) {
     root.classList.add('pe-mobile');
-    return;
   }
-
-  root.classList.add('pe-ready');
 }

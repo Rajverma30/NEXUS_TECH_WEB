@@ -3147,3 +3147,180 @@ html.site-ready .growth-engine {
 #platformEco.pe-ready .pe-orbit:hover .pe-logo .pe-icon {
   animation-play-state: paused;
 }
+
+/* ════════════════════════════════════════════════
+   PLATFORM ORBIT — VRAIZEN true center lock
+   ════════════════════════════════════════════════ */
+#platformEco.platform-ecosystem,
+#platformEco {
+  position: relative !important;
+  width: min(520px, 92vw) !important;
+  height: 520px !important;
+  min-height: 520px !important;
+  max-width: 520px !important;
+  margin: 28px auto 16px !important;
+  display: block !important;
+  overflow: visible !important;
+  aspect-ratio: auto !important;
+}
+
+#platformEco .pe-stage {
+  position: absolute !important;
+  inset: 0 !important;
+  display: grid !important;
+  place-items: center !important;
+  pointer-events: none;
+}
+
+#platformEco .pe-orbit,
+#platformEco .pe-core {
+  grid-area: 1 / 1 !important;
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  inset: auto !important;
+  margin: 0 !important;
+  pointer-events: auto;
+}
+
+#platformEco .pe-core {
+  z-index: 40 !important;
+  width: 120px !important;
+  height: 120px !important;
+  border-radius: 50% !important;
+  display: grid !important;
+  place-items: center !important;
+  transform: none !important;
+  background: linear-gradient(135deg, #3B82F6, #8B5CF6) !important;
+  box-shadow: 0 0 50px rgba(139, 92, 246, 0.5) !important;
+  color: #fff !important;
+  font-weight: 800 !important;
+  font-size: 13px !important;
+  letter-spacing: 0.12em !important;
+  border: none !important;
+}
+
+#platformEco .pe-orbit {
+  z-index: 10 !important;
+  width: 420px !important;
+  height: 420px !important;
+  max-width: 80vw !important;
+  max-height: 80vw !important;
+  transform: none !important;
+  animation: pe-spin 50s linear infinite !important;
+}
+
+@keyframes pe-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+#platformEco .pe-logo {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: 64px !important;
+  height: 64px !important;
+  margin: -32px 0 0 -32px !important;
+  border-radius: 16px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: rgba(12, 16, 28, 0.96) !important;
+  border: 1px solid rgba(148, 163, 184, 0.25) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 12 !important;
+  transform:
+    rotate(calc(var(--i) * (360deg / var(--pe-count, 9))))
+    translateY(-180px)
+    rotate(calc(var(--i) * (-360deg / var(--pe-count, 9)))) !important;
+}
+
+#platformEco .pe-logo .pe-icon {
+  display: flex !important;
+  animation: pe-spin-rev 50s linear infinite;
+}
+#platformEco .pe-logo .pe-icon svg {
+  width: 28px !important;
+  height: 28px !important;
+  display: block !important;
+}
+@keyframes pe-spin-rev {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+#platformEco .pe-logo:hover {
+  border-color: rgba(139, 92, 246, 0.7) !important;
+  box-shadow: 0 0 28px rgba(139, 92, 246, 0.4) !important;
+  z-index: 50 !important;
+}
+#platformEco .pe-orbit:hover,
+#platformEco .pe-orbit:hover .pe-logo .pe-icon {
+  animation-play-state: paused !important;
+}
+
+#platformEco .pe-tip {
+  position: absolute !important;
+  left: 50% !important;
+  bottom: calc(100% + 8px) !important;
+  transform: translateX(-50%) !important;
+  white-space: nowrap !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+  color: #fff !important;
+  background: rgba(5,7,15,0.95) !important;
+  border: 1px solid rgba(148,163,184,0.25) !important;
+  padding: 7px 10px !important;
+  border-radius: 8px !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  z-index: 60 !important;
+  animation: none !important;
+}
+#platformEco .pe-logo:hover .pe-tip {
+  opacity: 1 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #platformEco .pe-orbit,
+  #platformEco .pe-logo .pe-icon {
+    animation: none !important;
+  }
+}
+
+@media (max-width: 900px) {
+  #platformEco {
+    height: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+  }
+  #platformEco .pe-stage {
+    display: none !important;
+  }
+  .pe-marquee { display: block !important; }
+}
+
+@media (min-width: 901px) {
+  .pe-marquee { display: none !important; }
+}
+
+@media (max-width: 520px) {
+  #platformEco .pe-orbit {
+    width: 300px !important;
+    height: 300px !important;
+  }
+  #platformEco .pe-logo {
+    transform:
+      rotate(calc(var(--i) * (360deg / var(--pe-count, 9))))
+      translateY(-130px)
+      rotate(calc(var(--i) * (-360deg / var(--pe-count, 9)))) !important;
+  }
+}
