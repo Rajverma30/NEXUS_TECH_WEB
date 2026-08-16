@@ -5,15 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Vraizen Tech — AI-powered digital growth agency. Websites, AI automation and performance marketing engineered to turn attention into customers.">
 <meta name="keywords" content="Vraizen Tech, AI automation, web development, digital marketing, chatbot, SEO, lead generation, WhatsApp automation">
-<meta name="theme-color" content="#FFFFFF">
+<meta name="theme-color" content="#05070f">
 <title>Vraizen Tech — AI-Powered Digital Growth</title>
 <link rel="icon" type="image/png" href="logo-light.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="cinematic.css">
 </head>
 <body>
+
+<!-- Page loader -->
+<div class="page-loader" id="pageLoader" aria-hidden="true">
+  <div class="page-loader-brand">VRAIZEN</div>
+  <div class="page-loader-status">System initializing…</div>
+  <div class="page-loader-bar"><span></span></div>
+</div>
 
 <!-- Floating WhatsApp -->
 <a href="https://wa.me/916232161851" target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Chat on WhatsApp">
@@ -62,64 +70,89 @@
   <div class="container hero-content">
     <div class="hero-inner">
       <div class="hero-copy">
+        <div class="hero-kicker"><i></i> AI-Powered Digital Growth</div>
         <h1 class="hero-title">
-          We Build <span class="gradient-text">Digital Systems</span> That Grow Businesses.
+          <span class="hero-title-line">We build digital systems that</span>
+          <span class="hero-morph" id="heroMorph">GROW BUSINESSES</span>
         </h1>
         <p class="hero-sub">
           Websites, AI automation and performance marketing engineered to turn attention into customers.
         </p>
         <div class="hero-actions">
-          <a href="#contact" class="btn-primary">Start Growing <span class="btn-arrow">→</span></a>
-          <a href="#work" class="btn-secondary">View Our Work</a>
+          <a href="#contact" class="btn-primary" data-magnetic>Start Growing <span class="btn-arrow">→</span></a>
+          <a href="#work" class="btn-secondary" data-magnetic>View Our Work</a>
         </div>
       </div>
 
       <div class="hero-visual" aria-hidden="false">
-        <div class="dash-card float-y">
-          <div class="dash-header">
-            <div class="dash-title">Growth Dashboard</div>
-            <div class="dash-live"><span class="live-dot"></span> Live</div>
+        <div class="growth-engine float-y" id="growthEngine">
+          <div class="ge-demo">LIVE DEMO</div>
+          <div class="ge-head">
+            <div class="ge-title">Vraizen Growth Engine</div>
+            <div class="ge-live"><span class="live-dot"></span> Online</div>
           </div>
-          <div class="dash-metrics">
-            <div class="dash-metric">
-              <div class="dash-metric-label">Leads</div>
-              <div class="dash-metric-value" data-count="2482">0</div>
-              <div class="dash-metric-delta up">+32.6%</div>
-            </div>
-            <div class="dash-metric">
-              <div class="dash-metric-label">Conversion</div>
-              <div class="dash-metric-value" data-count="5.8" data-decimals="1" data-suffix="%">0%</div>
-              <div class="dash-metric-delta up">+14.2%</div>
-            </div>
-            <div class="dash-metric">
-              <div class="dash-metric-label">ROAS</div>
-              <div class="dash-metric-value">4.8x</div>
-              <div class="dash-metric-delta up">Illustrative</div>
-            </div>
-          </div>
-          <div class="dash-chart">
-            <svg viewBox="0 0 320 120" preserveAspectRatio="none" class="chart-svg">
-              <defs>
-                <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#2563EB" stop-opacity="0.25"/>
-                  <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
-                </linearGradient>
-                <linearGradient id="chartStroke" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stop-color="#2563EB"/>
-                  <stop offset="100%" stop-color="#7C3AED"/>
-                </linearGradient>
-              </defs>
-              <path class="chart-area" d="M0,90 C40,85 60,70 90,65 C120,60 140,75 170,50 C200,25 230,40 260,30 C290,20 310,35 320,28 L320,120 L0,120 Z" fill="url(#chartFill)"/>
-              <path class="chart-line" d="M0,90 C40,85 60,70 90,65 C120,60 140,75 170,50 C200,25 230,40 260,30 C290,20 310,35 320,28" fill="none" stroke="url(#chartStroke)" stroke-width="2.5"/>
-              <path class="chart-line secondary" d="M0,100 C50,95 80,88 110,82 C150,72 180,78 210,60 C250,40 280,55 320,48" fill="none" stroke="#8B5CF6" stroke-width="1.5" stroke-opacity="0.55"/>
-            </svg>
-          </div>
-          <div class="dash-footer">
-            <div class="ai-pill">
-              <span class="ai-dot"></span>
-              AI Automation Active
-            </div>
-            <div class="dash-growth">Growth +32.6%</div>
+          <svg class="ge-svg" viewBox="0 0 360 240" role="img" aria-label="Growth engine network diagram">
+            <defs>
+              <linearGradient id="geStroke" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#3B82F6"/>
+                <stop offset="100%" stop-color="#8B5CF6"/>
+              </linearGradient>
+              <radialGradient id="geCoreFill" cx="35%" cy="30%" r="70%">
+                <stop offset="0%" stop-color="#C4B5FD"/>
+                <stop offset="55%" stop-color="#6366F1"/>
+                <stop offset="100%" stop-color="#1E1B4B"/>
+              </radialGradient>
+              <path id="gePath1" d="M180 36 C180 70 180 90 180 110"/>
+              <path id="gePath2" d="M180 110 C140 130 110 150 90 175"/>
+              <path id="gePath3" d="M180 110 C220 130 250 150 270 175"/>
+              <path id="gePath4" d="M90 175 C140 195 180 205 180 220"/>
+              <path id="gePath5" d="M270 175 C220 195 180 205 180 220"/>
+            </defs>
+            <!-- Links -->
+            <path class="ge-link" d="M180 36 L180 110"/>
+            <path class="ge-link" d="M180 110 L90 175"/>
+            <path class="ge-link" d="M180 110 L270 175"/>
+            <path class="ge-link" d="M90 175 L180 220"/>
+            <path class="ge-link" d="M270 175 L180 220"/>
+            <path class="ge-link" d="M60 36 L140 36"/>
+            <path class="ge-link" d="M220 36 L300 36"/>
+            <!-- Packets -->
+            <circle class="ge-packet" r="3.5" fill="#A78BFA" style="offset-path:path('M180 36 L180 110');">
+              <animateMotion dur="2.4s" repeatCount="indefinite" path="M180 36 L180 110"/>
+            </circle>
+            <circle class="ge-packet" r="3" fill="#60A5FA" style="offset-path:path('M180 110 L90 175');">
+              <animateMotion dur="2.8s" begin="0.4s" repeatCount="indefinite" path="M180 110 L90 175"/>
+            </circle>
+            <circle class="ge-packet" r="3" fill="#C4B5FD" style="offset-path:path('M180 110 L270 175');">
+              <animateMotion dur="2.8s" begin="0.7s" repeatCount="indefinite" path="M180 110 L270 175"/>
+            </circle>
+            <!-- Nodes -->
+            <g class="ge-node" transform="translate(60,36)">
+              <circle r="22"/><text y="4">ADS</text>
+            </g>
+            <g class="ge-node" transform="translate(180,36)">
+              <circle r="22"/><text y="4">VISIT</text>
+            </g>
+            <g class="ge-node" transform="translate(300,36)">
+              <circle r="22"/><text y="4">WEB</text>
+            </g>
+            <g class="ge-node core" transform="translate(180,110)">
+              <circle r="28"/><text y="4">VRAIZEN AI</text>
+            </g>
+            <g class="ge-node" transform="translate(90,175)">
+              <circle r="22"/><text y="4">LEADS</text>
+            </g>
+            <g class="ge-node" transform="translate(270,175)">
+              <circle r="22"/><text y="4">DATA</text>
+            </g>
+            <g class="ge-node" transform="translate(180,220)">
+              <circle r="24"/><text y="4">GROWTH</text>
+            </g>
+          </svg>
+          <div class="ge-metrics">
+            <div class="ge-metric"><label>Leads</label><b data-count="2482">0</b></div>
+            <div class="ge-metric"><label>Conv.</label><b data-count="5.8" data-decimals="1" data-suffix="%">0%</b></div>
+            <div class="ge-metric"><label>ROAS</label><b>4.8x</b></div>
           </div>
         </div>
       </div>
@@ -128,12 +161,16 @@
 </section>
 
 <!-- ─── PLATFORMS ─── -->
-<section class="platforms-section" aria-label="Platforms">
+<section class="platforms-section" aria-label="Platforms" id="platforms">
   <div class="container">
     <p class="platforms-heading">Powered by the platforms your customers already use.</p>
     <p class="platforms-sub">Google Ads, Meta Ads, Instagram, YouTube &amp; more — connected to your growth system.</p>
+    <div class="platform-ecosystem" id="platformEco">
+      <div class="pe-core">VRAIZEN</div>
+      <div class="pe-orbit" id="peOrbit" aria-hidden="true"></div>
+    </div>
   </div>
-  <div class="logo-marquee">
+  <div class="logo-marquee pe-marquee">
     <div class="logo-marquee-track">
       <div class="platform-logo" data-brand="google">
         <span class="platform-icon" aria-hidden="true">
@@ -294,6 +331,47 @@
   </div>
 </section>
 
+<!-- ─── BUSINESS CHAOS → ORDER ─── -->
+<section class="chaos-section" id="chaos" aria-label="From chaos to connected growth">
+  <div class="chaos-sticky">
+    <div class="chaos-head">
+      <h2 class="section-title">Disconnected tools create <span class="gradient-text">chaos</span>.</h2>
+      <p class="section-sub" style="margin:12px auto 0">Scroll to watch Vraizen turn scattered channels into one intelligent system.</p>
+    </div>
+    <div class="chaos-stage">
+      <div class="chaos-node" data-slot="0" style="left:8%;top:12%;--dx:10px;--dy:-12px">Google Ads</div>
+      <div class="chaos-node" data-slot="1" style="left:62%;top:8%;--dx:-8px;--dy:10px">Instagram</div>
+      <div class="chaos-node" data-slot="2" style="left:28%;top:38%;--dx:12px;--dy:6px">Website</div>
+      <div class="chaos-node" data-slot="3" style="left:72%;top:42%;--dx:-10px;--dy:-8px">WhatsApp</div>
+      <div class="chaos-node" data-slot="4" style="left:12%;top:68%;--dx:6px;--dy:10px">CRM</div>
+      <div class="chaos-node" data-slot="5" style="left:55%;top:72%;--dx:-12px;--dy:-6px">Analytics</div>
+      <div class="chaos-node" data-slot="6" style="left:38%;top:18%;--dx:8px;--dy:12px">Leads</div>
+
+      <span class="chaos-warn" style="left:18%;top:28%">Disconnected</span>
+      <span class="chaos-warn" style="left:68%;top:30%">Manual</span>
+      <span class="chaos-warn" style="left:40%;top:58%">Lost Lead</span>
+      <span class="chaos-warn" style="left:78%;top:62%">Slow Follow-up</span>
+
+      <div class="chaos-core">VRAIZEN<br>CORE</div>
+      <svg class="chaos-lines" viewBox="0 0 400 300" aria-hidden="true">
+        <path d="M200 150 L80 40" stroke="url(#chaosGrad)" stroke-width="1.5" fill="none" opacity="0.6"/>
+        <path d="M200 150 L320 50" stroke="url(#chaosGrad)" stroke-width="1.5" fill="none" opacity="0.6"/>
+        <path d="M200 150 L60 220" stroke="url(#chaosGrad)" stroke-width="1.5" fill="none" opacity="0.6"/>
+        <path d="M200 150 L340 230" stroke="url(#chaosGrad)" stroke-width="1.5" fill="none" opacity="0.6"/>
+        <defs>
+          <linearGradient id="chaosGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#8B5CF6"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <div class="chaos-finale">
+        <h3>ONE CONNECTED GROWTH SYSTEM</h3>
+      </div>
+    </div>
+    <a href="#system" class="btn-primary chaos-see-btn" data-system-map data-magnetic>See the System <span class="btn-arrow">→</span></a>
+  </div>
+</section>
+
 <!-- ─── GROWTH SYSTEM ─── -->
 <section class="section section-alt" id="system">
   <div class="container">
@@ -314,6 +392,61 @@
       <div class="flow-connector" data-step="4" aria-hidden="true"><span></span></div>
       <div class="flow-node accent" data-step="5"><span>Customer</span></div>
     </div>
+    <div class="system-actions">
+      <button type="button" class="btn-secondary" data-system-map data-magnetic>See the System →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ─── DIGITAL UNIVERSE ─── -->
+<section class="section universe-section" id="universe">
+  <div class="container">
+    <div class="reveal section-head center">
+      <h2 class="section-title">The Vraizen <span class="gradient-text">digital universe</span>.</h2>
+      <p class="section-sub">Every capability orbits one growth core — AI, web, ads, automation and more.</p>
+    </div>
+    <div class="orbit-wrap">
+      <div class="orbit-core">VRAIZEN</div>
+      <div class="orbit-ring">
+        <div class="orbit-node">AI</div>
+        <div class="orbit-node">Web</div>
+        <div class="orbit-node">Ads</div>
+        <div class="orbit-node">SEO</div>
+        <div class="orbit-node">Automation</div>
+        <div class="orbit-node">Analytics</div>
+        <div class="orbit-node">WhatsApp</div>
+        <div class="orbit-node">CRM</div>
+      </div>
+      <div class="orbit-fallback logo-marquee" aria-hidden="true">
+        <div class="logo-marquee-track" style="gap:12px">
+          <span class="orbit-node" style="position:static">AI</span>
+          <span class="orbit-node" style="position:static">Web</span>
+          <span class="orbit-node" style="position:static">Ads</span>
+          <span class="orbit-node" style="position:static">SEO</span>
+          <span class="orbit-node" style="position:static">Automation</span>
+          <span class="orbit-node" style="position:static">Analytics</span>
+          <span class="orbit-node" style="position:static">WhatsApp</span>
+          <span class="orbit-node" style="position:static">CRM</span>
+          <span class="orbit-node" style="position:static">AI</span>
+          <span class="orbit-node" style="position:static">Web</span>
+          <span class="orbit-node" style="position:static">Ads</span>
+          <span class="orbit-node" style="position:static">SEO</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── AI CORE EYE-CATCHER ─── -->
+<section class="ai-core-section" id="aiCore">
+  <canvas class="ai-core-canvas" aria-hidden="true"></canvas>
+  <div class="container ai-core-inner">
+    <div class="ai-core-orb">VRAIZEN AI</div>
+    <p class="section-sub" style="margin:0">Data, leads, messages and traffic enter the core — and leave as organized growth.</p>
+    <div class="ai-core-streams">
+      <span>LEADS</span><span>AUTOMATION</span><span>CUSTOMERS</span>
+    </div>
+    <div class="ai-core-collapse">Collapsing into the Vraizen Growth System…</div>
   </div>
 </section>
 
@@ -325,42 +458,42 @@
       <p class="section-sub">A complete digital growth stack — strategy, build, automation and acquisition.</p>
     </div>
     <div class="services-grid">
-      <article class="service-card reveal delay-1">
+      <article class="service-card reveal delay-1" data-world="automation">
         <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/><path d="M19 14l.8 2.2L22 17l-2.2.8L19 20l-.8-2.2L16 17l2.2-.8L19 14z"/></svg></div>
         <h3>AI Automation</h3>
         <p>Intelligent workflows that automate repetitive business operations.</p>
       </article>
-      <article class="service-card reveal delay-2">
+      <article class="service-card reveal delay-2" data-world="chatbots">
         <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a4 4 0 01-4 4H8l-5 3V7a4 4 0 014-4h10a4 4 0 014 4z"/></svg></div>
         <h3>AI Chatbots</h3>
         <p>AI-powered customer support and lead qualification.</p>
       </article>
-      <article class="service-card reveal delay-3">
+      <article class="service-card reveal delay-3" data-world="website">
         <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div>
         <h3>Website Development</h3>
         <p>Fast, modern and conversion-focused websites.</p>
       </article>
-      <article class="service-card reveal delay-1">
+      <article class="service-card reveal delay-1" data-world="ecommerce">
         <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M3 4h2l2.4 11.2a2 2 0 002 1.6h7.8a2 2 0 001.9-1.5L21 8H7"/></svg></div>
         <h3>E-commerce</h3>
         <p>Online stores designed for performance and sales.</p>
       </article>
-      <article class="service-card reveal delay-2">
+      <article class="service-card reveal delay-2" data-world="marketing">
         <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v18M5 8h14M5 16h14"/><circle cx="9" cy="8" r="1.5" fill="currentColor"/><circle cx="15" cy="16" r="1.5" fill="currentColor"/></svg></div>
         <h3>Digital Marketing</h3>
         <p>Google and Meta campaigns focused on measurable growth.</p>
       </article>
-      <article class="service-card reveal delay-3">
+      <article class="service-card reveal delay-3" data-world="seo">
         <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
         <h3>SEO</h3>
         <p>Increase visibility, rankings and organic traffic.</p>
       </article>
-      <article class="service-card reveal delay-1">
+      <article class="service-card reveal delay-1" data-world="leads">
         <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="3"/><path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a3 3 0 010 5.74"/></svg></div>
         <h3>Lead Generation</h3>
         <p>Generate qualified leads through paid and organic channels.</p>
       </article>
-      <article class="service-card reveal delay-2">
+      <article class="service-card reveal delay-2" data-world="whatsapp">
         <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.4 8.4 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.4 8.4 0 01-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.4 8.4 0 013.8-.9h.5a8.5 8.5 0 018 8v.5z"/></svg></div>
         <h3>WhatsApp Automation</h3>
         <p>Automated conversations and follow-ups.</p>
@@ -386,7 +519,7 @@
         </div>
         <div class="analytics-stat">
           <div class="analytics-label">Conversion Rate</div>
-          <div class="analytics-value">5.8%</div>
+          <div class="analytics-value" data-count="5.8" data-decimals="1" data-suffix="%">0%</div>
           <div class="analytics-note">Demo metric</div>
         </div>
         <div class="analytics-stat">
@@ -404,15 +537,15 @@
         <svg viewBox="0 0 720 220" class="big-chart" preserveAspectRatio="none">
           <defs>
             <linearGradient id="bigFill" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#2563EB" stop-opacity="0.2"/>
-              <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+              <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.25"/>
+              <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
             </linearGradient>
             <linearGradient id="bigStroke" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stop-color="#2563EB"/>
-              <stop offset="100%" stop-color="#7C3AED"/>
+              <stop offset="0%" stop-color="#3B82F6"/>
+              <stop offset="100%" stop-color="#8B5CF6"/>
             </linearGradient>
           </defs>
-          <g class="chart-grid" stroke="#E2E8F0" stroke-width="1">
+          <g class="chart-grid" stroke="#334155" stroke-width="1">
             <line x1="0" y1="40" x2="720" y2="40"/>
             <line x1="0" y1="90" x2="720" y2="90"/>
             <line x1="0" y1="140" x2="720" y2="140"/>
@@ -424,6 +557,41 @@
         </svg>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ─── SCROLL-DRIVEN GROWTH GRAPH ─── -->
+<section class="scroll-growth" id="scrollGrowth" aria-label="Growth journey graph">
+  <div class="sg-sticky">
+    <div class="section-head center" style="margin-bottom:28px">
+      <h2 class="section-title">Attention becomes <span class="gradient-text">growth</span>.</h2>
+      <p class="section-sub">Scroll to watch the curve compound.</p>
+    </div>
+    <div class="sg-chart-wrap">
+      <div class="sg-glow" aria-hidden="true"></div>
+      <svg viewBox="0 0 800 280" preserveAspectRatio="none" aria-hidden="true">
+        <defs>
+          <linearGradient id="sgStroke" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#3B82F6"/><stop offset="100%" stop-color="#8B5CF6"/>
+          </linearGradient>
+          <linearGradient id="sgFill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.3"/>
+            <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <path class="sg-fill" d="M40,240 C120,230 160,210 220,190 C300,155 340,170 400,130 C480,80 540,100 620,60 C700,28 740,40 760,30 L760,260 L40,260 Z"/>
+        <path class="sg-path" d="M40,240 C120,230 160,210 220,190 C300,155 340,170 400,130 C480,80 540,100 620,60 C700,28 740,40 760,30"/>
+      </svg>
+    </div>
+    <div class="sg-markers">
+      <span class="sg-marker" data-at="0.05">Attention</span>
+      <span class="sg-marker" data-at="0.2">Traffic</span>
+      <span class="sg-marker" data-at="0.4">Leads</span>
+      <span class="sg-marker" data-at="0.6">Conversions</span>
+      <span class="sg-marker" data-at="0.78">Revenue</span>
+      <span class="sg-marker" data-at="0.92">Growth</span>
+    </div>
+    <div class="sg-finale">GROWTH</div>
   </div>
 </section>
 
@@ -688,6 +856,30 @@
   </div>
 </section>
 
+<!-- System Map Overlay -->
+<div class="system-map" id="systemMap" role="dialog" aria-modal="true" aria-label="Vraizen system map" hidden>
+  <button type="button" class="sm-close" aria-label="Close system map">×</button>
+  <div class="sm-tree">
+    <div class="sm-node core">VRAIZEN</div>
+    <div class="sm-line"></div>
+    <div class="sm-row">
+      <div class="sm-node">WEBSITE</div>
+      <div class="sm-node">AI</div>
+      <div class="sm-node">ADS</div>
+    </div>
+    <div class="sm-line"></div>
+    <div class="sm-node">LEADS</div>
+    <div class="sm-line"></div>
+    <div class="sm-node">WHATSAPP</div>
+    <div class="sm-line"></div>
+    <div class="sm-node">CUSTOMERS</div>
+    <div class="sm-line"></div>
+    <div class="sm-node core">GROWTH</div>
+    <div class="sm-packet" aria-hidden="true"></div>
+  </div>
+  <div class="sm-status">SYSTEM ONLINE</div>
+</div>
+
 <!-- ─── FOOTER ─── -->
 <footer class="footer">
   <div class="container">
@@ -891,6 +1083,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     const href = this.getAttribute('href');
     if (!href || href === '#') return;
+    if (this.hasAttribute('data-system-map')) return;
     const target = document.querySelector(href);
     if (target) {
       e.preventDefault();
@@ -899,5 +1092,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 </script>
+<script type="module" src="js/main.js"></script>
 </body>
 </html>
