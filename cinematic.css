@@ -3533,3 +3533,118 @@ html.site-ready .growth-engine {
 #platformEco .pe-logo .pe-tip {
   animation: none !important;
 }
+
+/* ===== Chaos popups + overlap fix ===== */
+.chaos-section {
+  min-height: 170vh !important;
+}
+
+.chaos-popups {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9;
+}
+
+.chaos-popup {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(248, 113, 113, 0.4);
+  background: rgba(127, 29, 29, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fecaca;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.chaos-popup::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  width: 10px;
+  height: 10px;
+  transform: translateX(-50%) rotate(45deg);
+  background: rgba(127, 29, 29, 0.4);
+  border-right: 1px solid rgba(248, 113, 113, 0.35);
+  border-bottom: 1px solid rgba(248, 113, 113, 0.35);
+}
+
+/* disable old warn row safely */
+.chaos-warns {
+  display: none !important;
+}
+
+/* Final headline lower + nodes lifted, avoids overlap */
+.chaos-finale {
+  bottom: 2% !important;
+  z-index: 10 !important;
+}
+
+.chaos-finale h3,
+.chaos-finale .finale-title {
+  font-size: clamp(20px, 3.2vw, 48px) !important;
+  line-height: 1.08;
+  max-width: min(700px, 92vw);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.chaos-section.chaos-final .chaos-node {
+  transform: translate(-50%, -50%) translateY(-24px) !important;
+}
+
+@media (max-width: 900px) {
+  .chaos-section {
+    min-height: 150vh !important;
+  }
+  .chaos-popup {
+    font-size: 10px;
+    padding: 6px 10px;
+  }
+  .chaos-finale h3,
+  .chaos-finale .finale-title {
+    font-size: clamp(18px, 7.5vw, 34px) !important;
+  }
+}
+
+/* ===== Platform orbit fine-tune (smaller + slow rotation) ===== */
+#platformEco .pe-orbit {
+  animation: pe-spin-soft 42s linear infinite !important;
+}
+
+@keyframes pe-spin-soft {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+#platformEco .pe-logo {
+  width: 58px !important;
+  height: 58px !important;
+  margin: -29px 0 0 -29px !important;
+  transform:
+    rotate(calc(var(--i) * (360deg / var(--pe-count, 9))))
+    translateY(-138px)
+    rotate(calc(var(--i) * (-360deg / var(--pe-count, 9)))) !important;
+}
+
+#platformEco .pe-logo .pe-icon {
+  animation: pe-spin-soft-rev 42s linear infinite !important;
+}
+
+@keyframes pe-spin-soft-rev {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+#platformEco .pe-logo .pe-icon svg {
+  width: 24px !important;
+  height: 24px !important;
+}

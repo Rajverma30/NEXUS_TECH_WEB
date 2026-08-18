@@ -2,9 +2,6 @@ import { prefersReducedMotion, clamp, isMobile } from './core.js';
 
 /**
  * Business Chaos → Connected System scroll story
- * - animation finishes earlier while section is still sticky
- * - warning popups stay near related nodes
- * - final headline appears after nodes move away from center
  */
 export function initChaosSystem(section) {
   if (!section) return;
@@ -15,7 +12,7 @@ export function initChaosSystem(section) {
   const finale = section.querySelector('.chaos-finale');
   const svgBroken = section.querySelector('.chaos-svg-broken');
   const svgConnected = section.querySelector('.chaos-svg-connected');
-  const popups = [...section.querySelectorAll('.chaos-popup')];
+  const warns = section.querySelector('.chaos-warns');
 
   if (!stage || !nodes.length) return;
 
@@ -97,61 +94,35 @@ export function initChaosSystem(section) {
     });
   };
 
-  const updatePopups = (show, animProgress) => {
-    if (!popups.length) return;
-
-    if (!show) {
-      popups.forEach((p) => {
-        p.style.opacity = '0';
-      });
-      return;
-    }
-
-    popups.forEach((popup) => {
-      const id = popup.dataset.for;
-      const node = nodes.find((n) => n.dataset.id === id);
-      if (!node) return;
-      const c = getCenter(node);
-
-      popup.style.left = `${c.x}px`;
-      popup.style.top = `${c.y - 42}px`;
-      popup.style.opacity = String(clamp((animProgress - 0.1) / 0.22, 0, 1));
-    });
-  };
-
   const update = () => {
     const r = section.getBoundingClientRect();
     const vh = window.innerHeight;
     const total = Math.max(1, r.height - vh * 0.45);
     const progress = prefersReducedMotion ? 1 : clamp(-r.top / total, 0, 1);
-    // Finish animation by 85% scroll so user doesn't feel section "drops" instantly.
-    const animProgress = prefersReducedMotion ? 1 : clamp(progress / 0.85, 0, 1);
 
-    section.style.setProperty('--chaos-p', animProgress.toFixed(4));
+    section.style.setProperty('--chaos-p', progress.toFixed(4));
 
-    section.classList.toggle('phase-drift', animProgress < 0.2);
-    section.classList.toggle('phase-warn', animProgress >= 0.08 && animProgress < 0.32);
-    section.classList.toggle('phase-pull', animProgress >= 0.28 && animProgress < 0.48);
-    section.classList.toggle('phase-core', animProgress >= 0.42 && animProgress < 0.62);
-    section.classList.toggle('phase-align', animProgress >= 0.55 && animProgress < 0.78);
-    section.classList.toggle('phase-pulse', animProgress >= 0.72);
-    section.classList.toggle('chaos-final', animProgress >= 0.74);
+    section.classList.toggle('phase-drift', progress < 0.2);
+    section.classList.toggle('phase-warn', progress >= 0.08 && progress < 0.32);
+    section.classList.toggle('phase-pull', progress >= 0.28 && progress < 0.48);
+    section.classList.toggle('phase-core', progress >= 0.42 && progress < 0.62);
+    section.classList.toggle('phase-align', progress >= 0.55 && progress < 0.78);
+    section.classList.toggle('phase-pulse', progress >= 0.72);
 
-    core?.classList.toggle('show', animProgress >= 0.38);
-    svgBroken?.classList.toggle('show', animProgress < 0.48);
-    svgConnected?.classList.toggle('show', animProgress >= 0.48);
-    finale?.classList.toggle('show', animProgress >= 0.75);
-    updatePopups(animProgress >= 0.1 && animProgress < 0.36, animProgress);
+    warns?.classList.toggle('show', progress >= 0.1 && progress < 0.35);
+    core?.classList.toggle('show', progress >= 0.38);
+    svgBroken?.classList.toggle('show', progress < 0.48);
+    svgConnected?.classList.toggle('show', progress >= 0.48);
+    finale?.classList.toggle('show', progress >= 0.75);
 
-    if (animProgress < 0.48) drawBroken();
-    if (animProgress >= 0.38) drawConnected();
+    if (progress < 0.48) drawBroken();
+    if (progress >= 0.38) drawConnected();
 
     if (prefersReducedMotion) {
-      section.classList.add('phase-pulse', 'chaos-reduced', 'chaos-final');
+      section.classList.add('phase-pulse', 'chaos-reduced');
       core?.classList.add('show');
       finale?.classList.add('show');
       svgConnected?.classList.add('show');
-      updatePopups(false, 1);
       drawConnected();
     }
   };
