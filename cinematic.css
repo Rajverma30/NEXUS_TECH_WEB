@@ -1813,7 +1813,7 @@ form select:focus {
 }
 .sg-path {
   fill: none;
-  stroke: url(#sgStroke, none);
+  stroke: url(#sgStroke);
   stroke: #3B82F6;
   stroke-width: 2.5;
   stroke-linecap: round;
@@ -1821,7 +1821,7 @@ form select:focus {
   filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.45));
 }
 .sg-fill {
-  fill: url(#sgFill, none);
+  fill: url(#sgFill);
   fill: rgba(59, 130, 246, 0.12);
   transition: opacity 0.2s linear;
   opacity: 0;
@@ -3004,7 +3004,7 @@ html.site-ready .growth-engine {
   width: 0 !important;
   height: 0 !important;
   inset: auto !important;
-  transform: none !important;
+  transform-origin: 50% 50% !important;
   animation: pe-spin 48s linear infinite;
 }
 
@@ -3040,10 +3040,12 @@ html.site-ready .growth-engine {
   transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
 }
 
-/* Counter-rotate tip + icon so they stay upright while ring spins */
-#platformEco.pe-ready .pe-orbit .pe-logo .pe-icon,
-#platformEco.pe-ready .pe-orbit .pe-logo .pe-tip {
+/* Counter-rotate icon only — NOT the tooltip text */
+#platformEco.pe-ready .pe-orbit .pe-logo .pe-icon {
   animation: pe-spin-rev 48s linear infinite;
+}
+#platformEco.pe-ready .pe-orbit .pe-logo .pe-tip {
+  animation: none !important;
 }
 @keyframes pe-spin-rev {
   from { transform: rotate(0deg); }
@@ -3213,7 +3215,7 @@ html.site-ready .growth-engine {
   height: 420px !important;
   max-width: 80vw !important;
   max-height: 80vw !important;
-  transform: none !important;
+  transform-origin: 50% 50% !important;
   animation: pe-spin 50s linear infinite !important;
 }
 
@@ -3580,34 +3582,40 @@ html.site-ready .growth-engine {
   }
 }
 
-/* ===== Platform orbit: slow spin around VRAIZEN ===== */
+/* ===== Platform orbit — FINAL (orbit spins, icons stay upright) ===== */
 #platformEco .pe-orbit {
-  animation: pe-spin-soft 50s linear infinite !important;
   width: 340px !important;
   height: 340px !important;
+  transform-origin: 50% 50% !important;
+  animation: pe-orbit-spin 55s linear infinite !important;
 }
-@keyframes pe-spin-soft {
+@keyframes pe-orbit-spin {
   from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+  to { transform: rotate(360deg); }
+}
+
+#platformEco .pe-orbit::before {
+  z-index: 0 !important;
 }
 
 #platformEco .pe-logo {
   width: 54px !important;
   height: 54px !important;
   margin: -27px 0 0 -27px !important;
+  z-index: 2 !important;
   transform:
     rotate(calc(var(--i) * (360deg / var(--pe-count, 9))))
     translateY(-148px)
     rotate(calc(var(--i) * (-360deg / var(--pe-count, 9)))) !important;
 }
 
-/* counter-rotate icons so they stay upright while orbit spins */
+/* Counter-rotate icon so logo stays upright while orbiting */
 #platformEco .pe-logo .pe-icon {
-  animation: pe-spin-soft-rev 50s linear infinite !important;
+  animation: pe-orbit-counter 55s linear infinite !important;
 }
-@keyframes pe-spin-soft-rev {
+@keyframes pe-orbit-counter {
   from { transform: rotate(0deg); }
-  to   { transform: rotate(-360deg); }
+  to { transform: rotate(-360deg); }
 }
 
 #platformEco .pe-logo .pe-icon svg {
@@ -3615,19 +3623,43 @@ html.site-ready .growth-engine {
   height: 24px !important;
 }
 
-/* tooltip stays still */
+/* Hide tooltip text on orbit — only show on hover */
 #platformEco .pe-logo .pe-tip {
   animation: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transform: translateX(-50%) !important;
+}
+#platformEco .pe-logo:hover .pe-tip {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+#platformEco .pe-orbit:hover {
+  animation-play-state: paused !important;
+}
+#platformEco .pe-orbit:hover .pe-logo .pe-icon {
+  animation-play-state: paused !important;
 }
 
 @media (max-width: 520px) {
   #platformEco .pe-orbit { width: 270px !important; height: 270px !important; }
   #platformEco .pe-logo {
-    width: 44px !important; height: 44px !important;
+    width: 44px !important;
+    height: 44px !important;
     margin: -22px 0 0 -22px !important;
     transform:
       rotate(calc(var(--i) * (360deg / var(--pe-count, 9))))
       translateY(-115px)
       rotate(calc(var(--i) * (-360deg / var(--pe-count, 9)))) !important;
   }
+}
+
+.contact-item-icon svg {
+  display: block;
+}
+.form-success-icon svg {
+  display: block;
+  color: #34D399;
 }

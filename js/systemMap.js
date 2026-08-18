@@ -4,6 +4,9 @@ import { prefersReducedMotion } from './core.js';
  * Signature "See the System" full-screen map overlay
  */
 export function initSystemMap() {
+  if (window.__vraizenSystemMapInit) return;
+  window.__vraizenSystemMapInit = true;
+
   const overlay = document.getElementById('systemMap');
   const openBtn = document.querySelectorAll('[data-system-map]');
   if (!overlay || !openBtn.length) return;
