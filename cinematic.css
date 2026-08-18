@@ -3663,3 +3663,108 @@ html.site-ready .growth-engine {
   display: block;
   color: #34D399;
 }
+
+/* ===== Contact popup modal ===== */
+.contact-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 9600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(3, 5, 12, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+.contact-popup.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.contact-popup[hidden] { display: none !important; }
+.contact-popup:not([hidden]) { display: flex !important; }
+
+.cp-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+}
+.cp-close:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.cp-panel {
+  width: min(560px, 100%);
+  max-height: min(90vh, 820px);
+  overflow: auto;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(59, 130, 246, 0.08), transparent 60%),
+    rgba(12, 16, 28, 0.98);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+  padding: 28px 24px 24px;
+  transform: translateY(16px) scale(0.97);
+  transition: transform 0.35s var(--ease-out);
+}
+.contact-popup.open .cp-panel {
+  transform: translateY(0) scale(1);
+}
+
+.cp-head {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.cp-head h3 {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.cp-head p {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.cp-form.contact-form {
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+.contact-cta-card h3 {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.contact-cta-card p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+  .contact-popup { padding: 12px; align-items: flex-end; }
+  .cp-panel {
+    max-height: 92vh;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .cp-form .form-row { grid-template-columns: 1fr; }
+}

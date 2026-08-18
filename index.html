@@ -793,62 +793,77 @@
         </div>
         <a href="https://wa.me/916232161851" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">Quick Chat on WhatsApp</a>
       </div>
-      <div class="contact-form reveal-right">
-        <div id="formSuccess" class="form-success" hidden>
-          <div class="form-success-icon" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
-          </div>
-          <h3>Message Sent!</h3>
-          <p>We'll get back to you within 2 hours.</p>
-        </div>
-        <div id="contactForm">
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="fname">Your Name *</label>
-              <input type="text" class="form-input" placeholder="John Doe" id="fname" autocomplete="name">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="femail">Email Address *</label>
-              <input type="email" class="form-input" placeholder="john@company.com" id="femail" autocomplete="email">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="fphone">Phone / WhatsApp</label>
-            <input type="tel" class="form-input" placeholder="+91 6232161851" id="fphone" autocomplete="tel">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="fservice">Service Interested In</label>
-            <select class="form-input" id="fservice">
-              <option value="">Select a service...</option>
-              <option>Website Development</option>
-              <option>Digital Marketing</option>
-              <option>AI Automation</option>
-              <option>AI Chatbots</option>
-              <option>E-commerce</option>
-              <option>WhatsApp Automation</option>
-              <option>Full Growth Package</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <span class="form-label">Send via</span>
-            <div class="send-via">
-              <label><input type="radio" name="sendVia" value="whatsapp" checked> WhatsApp</label>
-              <label><input type="radio" name="sendVia" value="email"> Email</label>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="fmsg">Tell us about your project *</label>
-            <textarea class="form-textarea" placeholder="Describe your business, goals, and what you're looking to achieve..." id="fmsg"></textarea>
-          </div>
-          <button type="button" class="btn-primary btn-full" onclick="handleSubmit()">
-            Send Message <span class="btn-arrow">&rarr;</span>
-          </button>
-          <p class="form-note">No spam, ever. We respond within 2 hours.</p>
-        </div>
+      <div class="contact-form reveal-right contact-cta-card">
+        <h3>Start your growth project</h3>
+        <p>Tell us about your business and we will reply within 2 hours with a free strategy.</p>
+        <button type="button" class="btn-primary btn-full" data-contact-popup>Get Started &rarr;</button>
+        <p class="form-note">Or scroll here anytime — your details stay private.</p>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Contact Popup -->
+<div class="contact-popup" id="contactPopup" role="dialog" aria-modal="true" aria-label="Contact form" hidden>
+  <button type="button" class="cp-close" aria-label="Close contact form">&times;</button>
+  <div class="cp-panel">
+    <div class="cp-head">
+      <h3>Get Started</h3>
+      <p>Free consultation &mdash; we respond within 2 hours.</p>
+    </div>
+    <div id="cpFormSuccess" class="form-success" hidden>
+      <div class="form-success-icon" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>
+      </div>
+      <h3>Message Sent!</h3>
+      <p>We'll get back to you within 2 hours.</p>
+    </div>
+    <div id="cpContactForm" class="contact-form cp-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label" for="fname">Your Name *</label>
+          <input type="text" class="form-input" placeholder="John Doe" id="fname" autocomplete="name">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="femail">Email Address *</label>
+          <input type="email" class="form-input" placeholder="john@company.com" id="femail" autocomplete="email">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="fphone">Phone / WhatsApp</label>
+        <input type="tel" class="form-input" placeholder="+91 6232161851" id="fphone" autocomplete="tel">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="fservice">Service Interested In</label>
+        <select class="form-input" id="fservice">
+          <option value="">Select a service...</option>
+          <option>Website Development</option>
+          <option>Digital Marketing</option>
+          <option>AI Automation</option>
+          <option>AI Chatbots</option>
+          <option>E-commerce</option>
+          <option>WhatsApp Automation</option>
+          <option>Full Growth Package</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <span class="form-label">Send via</span>
+        <div class="send-via">
+          <label><input type="radio" name="sendVia" value="whatsapp" checked> WhatsApp</label>
+          <label><input type="radio" name="sendVia" value="email"> Email</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="fmsg">Tell us about your project *</label>
+        <textarea class="form-textarea" placeholder="Describe your business, goals, and what you're looking to achieve..." id="fmsg"></textarea>
+      </div>
+      <button type="button" class="btn-primary btn-full" onclick="handleSubmit()">
+        Send Message <span class="btn-arrow">&rarr;</span>
+      </button>
+      <p class="form-note">No spam, ever. We respond within 2 hours.</p>
+    </div>
+  </div>
+</div>
 
 <!-- System Map Overlay -->
 <div class="system-map" id="systemMap" role="dialog" aria-modal="true" aria-label="Vraizen system map" hidden>
@@ -1070,8 +1085,40 @@ function handleSubmit() {
   } else {
     window.open(`https://wa.me/916232161851?text=${encodeURIComponent(text)}`, '_blank');
   }
-  document.getElementById('contactForm').hidden = true;
-  document.getElementById('formSuccess').hidden = false;
+  document.getElementById('cpContactForm').hidden = true;
+  document.getElementById('cpFormSuccess').hidden = false;
+}
+
+function openContactPopup(e) {
+  if (e) e.preventDefault();
+  const popup = document.getElementById('contactPopup');
+  if (!popup) return;
+  popup.hidden = false;
+  popup.setAttribute('aria-hidden', 'false');
+  popup.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  const mobileMenu = document.getElementById('mobileMenu');
+  const hamburger = document.getElementById('hamburger');
+  if (mobileMenu?.classList.contains('open')) {
+    mobileMenu.classList.remove('open');
+    hamburger?.classList.remove('open');
+    hamburger?.setAttribute('aria-expanded', 'false');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+  }
+  setTimeout(() => popup.querySelector('#fname')?.focus(), 120);
+}
+
+function closeContactPopup() {
+  const popup = document.getElementById('contactPopup');
+  if (!popup) return;
+  popup.classList.remove('open');
+  popup.hidden = true;
+  popup.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+  const form = document.getElementById('cpContactForm');
+  const success = document.getElementById('cpFormSuccess');
+  if (form) form.hidden = false;
+  if (success) success.hidden = true;
 }
 
 /* Smooth Scroll */
@@ -1083,6 +1130,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       e.preventDefault();
       return;
     }
+    if (href === '#contact' || this.hasAttribute('data-contact-popup')) {
+      e.preventDefault();
+      openContactPopup(e);
+      return;
+    }
     const target = document.querySelector(href);
     if (target) {
       e.preventDefault();
@@ -1090,6 +1142,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
+document.querySelectorAll('[data-contact-popup]').forEach((btn) => {
+  btn.addEventListener('click', openContactPopup);
+});
+
+(function initContactPopup() {
+  const popup = document.getElementById('contactPopup');
+  if (!popup) return;
+  popup.querySelector('.cp-close')?.addEventListener('click', closeContactPopup);
+  popup.addEventListener('click', (e) => {
+    if (e.target === popup) closeContactPopup();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && popup.classList.contains('open')) closeContactPopup();
+  });
+})();
 
 /* System Map popup — works even if ES modules fail to load */
 (function () {
