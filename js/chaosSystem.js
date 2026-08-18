@@ -124,8 +124,7 @@ export function initChaosSystem(section) {
     const vh = window.innerHeight;
     const total = Math.max(1, r.height - vh * 0.45);
     const progress = prefersReducedMotion ? 1 : clamp(-r.top / total, 0, 1);
-    // Finish animation by 85% scroll so user doesn't feel section "drops" instantly.
-    const animProgress = prefersReducedMotion ? 1 : clamp(progress / 0.85, 0, 1);
+    const animProgress = prefersReducedMotion ? 1 : clamp(progress / 0.7, 0, 1);
 
     section.style.setProperty('--chaos-p', animProgress.toFixed(4));
 

@@ -3483,60 +3483,23 @@ html.site-ready .growth-engine {
   box-shadow: 0 0 12px rgba(248, 113, 113, 0.12);
 }
 
-/* ── Platform: static ring close to VRAIZEN, no spin ── */
-#platformEco .pe-orbit {
-  animation: none !important;
-  width: 340px !important;
-  height: 340px !important;
-}
-#platformEco .pe-logo {
-  transform:
-    rotate(calc(var(--i) * (360deg / var(--pe-count, 9))))
-    translateY(-148px)
-    rotate(calc(var(--i) * (-360deg / var(--pe-count, 9)))) !important;
-  transition: transform 0.4s ease, border-color 0.25s ease, box-shadow 0.25s ease !important;
-}
-#platformEco .pe-logo .pe-icon {
-  animation: none !important;
-}
-#platformEco .pe-logo:hover {
-  transform:
-    rotate(calc(var(--i) * (360deg / var(--pe-count, 9))))
-    translateY(-158px) scale(1.08)
-    rotate(calc(var(--i) * (-360deg / var(--pe-count, 9)))) !important;
-}
+/* ── Platform: orbit ring visible behind logos ── */
 #platformEco .pe-orbit::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 1px dashed rgba(148, 163, 184, 0.12);
+  border: 1px dashed rgba(148, 163, 184, 0.1);
   pointer-events: none;
+  z-index: 0;
 }
-@media (max-width: 520px) {
-  #platformEco .pe-orbit { width: 280px !important; height: 280px !important; }
-  #platformEco .pe-logo {
-    transform:
-      rotate(calc(var(--i) * (360deg / var(--pe-count, 9))))
-      translateY(-118px)
-      rotate(calc(var(--i) * (-360deg / var(--pe-count, 9)))) !important;
-  }
-}
-
-/* Kill ALL platform spin overrides */
-#platformEco .pe-orbit,
-#platformEco.pe-ready .pe-orbit,
-.platform-ecosystem .pe-orbit {
-  animation: none !important;
-}
-#platformEco .pe-logo .pe-icon,
-#platformEco .pe-logo .pe-tip {
-  animation: none !important;
+#platformEco .pe-logo {
+  z-index: 2 !important;
 }
 
 /* ===== Chaos popups + overlap fix ===== */
 .chaos-section {
-  min-height: 170vh !important;
+  min-height: 220vh !important;
 }
 
 .chaos-popups {
@@ -3584,17 +3547,19 @@ html.site-ready .growth-engine {
 
 /* Final headline lower + nodes lifted, avoids overlap */
 .chaos-finale {
-  bottom: 2% !important;
+  bottom: -2% !important;
   z-index: 10 !important;
 }
 
 .chaos-finale h3,
 .chaos-finale .finale-title {
-  font-size: clamp(20px, 3.2vw, 48px) !important;
-  line-height: 1.08;
-  max-width: min(700px, 92vw);
+  font-size: clamp(16px, 2.2vw, 32px) !important;
+  line-height: 1.15;
+  max-width: min(500px, 85vw);
   margin: 0 auto;
   text-align: center;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .chaos-section.chaos-final .chaos-node {
@@ -3603,7 +3568,7 @@ html.site-ready .growth-engine {
 
 @media (max-width: 900px) {
   .chaos-section {
-    min-height: 150vh !important;
+    min-height: 180vh !important;
   }
   .chaos-popup {
     font-size: 10px;
@@ -3611,40 +3576,58 @@ html.site-ready .growth-engine {
   }
   .chaos-finale h3,
   .chaos-finale .finale-title {
-    font-size: clamp(18px, 7.5vw, 34px) !important;
+    font-size: clamp(14px, 5vw, 24px) !important;
   }
 }
 
-/* ===== Platform orbit fine-tune (smaller + slow rotation) ===== */
+/* ===== Platform orbit: slow spin around VRAIZEN ===== */
 #platformEco .pe-orbit {
-  animation: pe-spin-soft 42s linear infinite !important;
+  animation: pe-spin-soft 50s linear infinite !important;
+  width: 340px !important;
+  height: 340px !important;
 }
-
 @keyframes pe-spin-soft {
   from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  to   { transform: rotate(360deg); }
 }
 
 #platformEco .pe-logo {
-  width: 58px !important;
-  height: 58px !important;
-  margin: -29px 0 0 -29px !important;
+  width: 54px !important;
+  height: 54px !important;
+  margin: -27px 0 0 -27px !important;
   transform:
     rotate(calc(var(--i) * (360deg / var(--pe-count, 9))))
-    translateY(-138px)
+    translateY(-148px)
     rotate(calc(var(--i) * (-360deg / var(--pe-count, 9)))) !important;
 }
 
+/* counter-rotate icons so they stay upright while orbit spins */
 #platformEco .pe-logo .pe-icon {
-  animation: pe-spin-soft-rev 42s linear infinite !important;
+  animation: pe-spin-soft-rev 50s linear infinite !important;
 }
-
 @keyframes pe-spin-soft-rev {
   from { transform: rotate(0deg); }
-  to { transform: rotate(-360deg); }
+  to   { transform: rotate(-360deg); }
 }
 
 #platformEco .pe-logo .pe-icon svg {
   width: 24px !important;
   height: 24px !important;
+}
+
+/* tooltip stays still */
+#platformEco .pe-logo .pe-tip {
+  animation: none !important;
+}
+
+@media (max-width: 520px) {
+  #platformEco .pe-orbit { width: 270px !important; height: 270px !important; }
+  #platformEco .pe-logo {
+    width: 44px !important; height: 44px !important;
+    margin: -22px 0 0 -22px !important;
+    transform:
+      rotate(calc(var(--i) * (360deg / var(--pe-count, 9))))
+      translateY(-115px)
+      rotate(calc(var(--i) * (-360deg / var(--pe-count, 9)))) !important;
+  }
 }
